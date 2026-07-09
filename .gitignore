@@ -1,0 +1,22 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Business Layer/bin
+/Business Layer/obj
+/Business Layer/Properties
+/Business Layer/Business Layer.csproj
+/DataAccess Layer/bin
+/DataAccess Layer/obj
+/DataAccess Layer/Properties
+/DataAccess Layer/DataAccess Layer.csproj
+/Presentation Layer/Properties
+/Presentation Layer/Program.cs
+/Presentation Layer/obj/Release
+/Presentation Layer/obj/Debug
+/Presentation Layer/bin/Release
+/Presentation Layer/bin/Debug
+/Presentation Layer/.vs/Presentation Layer.slnx
+/Presentation Layer/App.config
+/Presentation Layer/Presentation Layer.csproj
+/Presentation Layer/Presentation Layer.slnx
