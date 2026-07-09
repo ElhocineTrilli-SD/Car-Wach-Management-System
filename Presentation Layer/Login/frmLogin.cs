@@ -1,0 +1,86 @@
+﻿using Guna.UI2.WinForms;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Presentation_Layer
+{
+    public partial class frmLogin : Form
+    {
+        public frmLogin()
+        {
+            InitializeComponent();
+        }
+        private void ValidateEmptyTextBox(object sender, CancelEventArgs e)
+        {
+            Control Temp = ((Control)sender);
+
+            if (string.IsNullOrEmpty(Temp.Text.Trim()))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(Temp, "This field is required!");
+            }
+            else
+            {
+                errorProvider1.SetError(Temp, null);
+            }
+        }
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            txtUserName.Validating += ValidateEmptyTextBox;
+            txtPassword.Validating += ValidateEmptyTextBox;
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (!this.ValidateChildren())
+            {
+                MessageBox.Show("Please fill in all required fields.");
+                return;
+            }
+
+
+            if (txtUserName.Text == "" && txtPassword.Text == "") { return; }
+
+
+            if (txtPassword.Text == "admin" && txtUserName.Text == "admin")
+            {
+                MessageBox.Show("success");
+            }
+            else
+            {
+                MessageBox.Show("Incorrect password. Please try again.", "Login Failed",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = string.Empty;
+            txtUserName.Text = string.Empty;
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = string.Empty;
+            txtUserName.Text = string.Empty;
+        }
+    }
+}
