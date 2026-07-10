@@ -33,8 +33,7 @@ namespace Presentation_Layer
         }
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            txtUserName.Validating += ValidateEmptyTextBox;
-            txtPassword.Validating += ValidateEmptyTextBox;
+           
 
         }
 
@@ -47,7 +46,13 @@ namespace Presentation_Layer
             }
 
 
-            if (txtUserName.Text == "" && txtPassword.Text == "") { return; }
+            if (txtUserName.Text == "" && txtPassword.Text == "")
+            {
+               
+                return; }
+
+            txtUserName.Validating += ValidateEmptyTextBox;
+            txtPassword.Validating += ValidateEmptyTextBox;
 
 
             if (txtPassword.Text == "admin" && txtUserName.Text == "admin")
@@ -71,11 +76,7 @@ namespace Presentation_Layer
             Application.Exit();
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            txtPassword.Text = string.Empty;
-            txtUserName.Text = string.Empty;
-        }
+      
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
