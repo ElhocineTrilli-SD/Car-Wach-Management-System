@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Guna.UI2.WinForms.Helpers.GraphicsHelper;
 
 namespace Presentation_Layer.Employee
 {
@@ -18,12 +19,12 @@ namespace Presentation_Layer.Employee
         public frmEmployee()
         {
             InitializeComponent();
-            RefrechEmployeeList();
+
         }
 
         public void RefrechEmployeeList()
         {
-            _dtEmployees =  clsEmployee.GetAllEmployee();
+            _dtEmployees = clsEmployee.GetAllEmployee();
             dgvEmployees.DataSource = _dtEmployees;
         }
 
@@ -46,10 +47,58 @@ namespace Presentation_Layer.Employee
                 txtPhone.Text = row.Cells[2].Value.ToString();
                 txtRole.Text = row.Cells[3].Value.ToString();
                 txtSalary.Text = row.Cells[4].Value.ToString();
-                HireDate.Text = row.Cells[5].Value.ToString();
+                dtpHireDate.Text = row.Cells[5].Value.ToString();
                 cbIsActive.SelectedIndex = Convert.ToBoolean(row.Cells[6].Value) ? 0 : 1;
 
             }
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            int ID = (int)dgvEmployees.CurrentRow.Cells[0].Value;
+            string FullName = txtEmployeeFullName.Text;
+            string Phone = txtPhone.Text;
+            string Role = txtRole.Text;
+            string salary = txtSalary.Text;
+            DateTime Hiredate = dtpHireDate.Value.Date ;
+            bool IsActive = cbIsActive.SelectedIndex == 0;
+            
+
+            DialogResult result = MessageBox.Show(
+                           "Are you sure you want to update employee Info?",
+                           "Confirm Update",
+                           MessageBoxButtons.YesNo,
+                           MessageBoxIcon.Warning
+                           );
+
+            if (result == DialogResult.Yes)
+            {
+                // Update Code : 
+                if (clsEmployee.UpdateEmployee(ID, FullName, Phone, Role, salary, Hiredate, IsActive))
+                {
+                    MessageBox.Show(
+                                    "The employee with ID " + ID + " was updated successfully.",
+                                    "Update Successful",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information
+                                   );
+                    frmEmployee_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show(
+                                    "Failed to update the employee info Please try again.",
+                                    "Update Failed",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error
+                                   );
+                }
+            }
+        }
+
+        private void frmEmployee_Load(object sender, EventArgs e)
+        {
+            RefrechEmployeeList();
+        }
     }
-}
+    }
