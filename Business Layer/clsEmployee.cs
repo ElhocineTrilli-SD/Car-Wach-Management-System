@@ -16,5 +16,13 @@ namespace Business_Layer
 
             return clsEmployeesData.GetAllEmployee();
         }
+
+        public static bool UpdateEmployee(int ID, string FullName, string Phone,
+            string Role, string salary, DateTime Hiredate, bool IsActive)
+        {
+            return clsEmployeesData.UpdateEmployee(ID, FullName, Phone, Role, salary, Hiredate, IsActive) > 0;
+        }
+
+
     }
 }

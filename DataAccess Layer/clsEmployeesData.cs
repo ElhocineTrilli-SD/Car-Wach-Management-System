@@ -84,7 +84,8 @@ namespace DataAccess_Layer
 
         }
 
-        public static int UpdateEmployee(int ID, string Name, string Gender, string Phone, string Position, int Salary, string JDate)
+        public static int UpdateEmployee(int ID, string FullName, string Phone,
+            string Role, string salary, DateTime Hiredate, bool IsActive)
         {
             int RowAffected = 0;
             try
@@ -92,26 +93,25 @@ namespace DataAccess_Layer
                 using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
                 {
                     connection.Open();
-                    string Query = @"UPDATE [dbo].[Employees]
-   SET [Name] = @Name
-      ,[Gender] = @Gender
-      ,[Phone] = @Phone
-      ,[Position] = @Position
-      ,[Salary] = @Salary
-      ,[Joindate] = @Joindate
-       WHERE EmpID = @EmpID";
-
+                    string Query = @"UPDATE Employees
+   SET [FullName] = @FullName,
+      [Phone] = @Phone,
+      [Role] = @Role,
+      [SalaryPerMonth] = @SalaryPerMonth,
+      [HireDate] = @HireDate,
+      [IsActive] = @IsActive
+       where EmployeeID = @EmployeeID ; ";
 
 
                     using (SqlCommand command = new SqlCommand(Query, connection))
                     {
-                        command.Parameters.AddWithValue("@EmpID", ID);
-                        command.Parameters.AddWithValue("@Name", Name);
-                        command.Parameters.AddWithValue("@Gender", Gender);
+                        command.Parameters.AddWithValue("@EmployeeID", ID);
+                        command.Parameters.AddWithValue("@FullName", FullName);
                         command.Parameters.AddWithValue("@Phone", Phone);
-                        command.Parameters.AddWithValue("@Position", Position);
-                        command.Parameters.AddWithValue("@Salary", Salary);
-                        command.Parameters.AddWithValue("@Joindate", JDate);
+                        command.Parameters.AddWithValue("@Role", Role);
+                        command.Parameters.AddWithValue("@SalaryPerMonth", salary);
+                        command.Parameters.AddWithValue("@HireDate", Hiredate);
+                        command.Parameters.AddWithValue("@IsActive", IsActive);
 
 
                         RowAffected = command.ExecuteNonQuery();
