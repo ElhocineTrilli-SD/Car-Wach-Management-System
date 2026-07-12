@@ -39,5 +39,9 @@ namespace Business_Layer
             return clsEmployeesData.DeleteEmployee(EmployeeID) > 0;
         }
 
+        public static int GetEmployeeCount()
+        {
+            return clsEmployeesData.TotalEmployee();
+        }
     }
 }

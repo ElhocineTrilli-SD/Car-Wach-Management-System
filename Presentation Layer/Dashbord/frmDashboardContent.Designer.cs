@@ -39,7 +39,7 @@
             this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel6 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblCountEmployees = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -156,7 +156,7 @@
             // 
             this.guna2CustomGradientPanel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel6.BorderRadius = 15;
-            this.guna2CustomGradientPanel6.Controls.Add(this.label12);
+            this.guna2CustomGradientPanel6.Controls.Add(this.lblCountEmployees);
             this.guna2CustomGradientPanel6.Controls.Add(this.guna2CirclePictureBox2);
             this.guna2CustomGradientPanel6.Controls.Add(this.label6);
             this.guna2CustomGradientPanel6.Location = new System.Drawing.Point(264, 61);
@@ -164,17 +164,17 @@
             this.guna2CustomGradientPanel6.Size = new System.Drawing.Size(249, 126);
             this.guna2CustomGradientPanel6.TabIndex = 66;
             // 
-            // label12
+            // lblCountEmployees
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.Color.Lime;
-            this.label12.Location = new System.Drawing.Point(209, 93);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 23);
-            this.label12.TabIndex = 65;
-            this.label12.Text = "+ 3";
+            this.lblCountEmployees.AutoSize = true;
+            this.lblCountEmployees.BackColor = System.Drawing.Color.Transparent;
+            this.lblCountEmployees.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold);
+            this.lblCountEmployees.ForeColor = System.Drawing.Color.Lime;
+            this.lblCountEmployees.Location = new System.Drawing.Point(100, 63);
+            this.lblCountEmployees.Name = "lblCountEmployees";
+            this.lblCountEmployees.Size = new System.Drawing.Size(47, 23);
+            this.lblCountEmployees.TabIndex = 65;
+            this.lblCountEmployees.Text = "+ 00";
             // 
             // guna2CirclePictureBox2
             // 
@@ -307,7 +307,7 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel6;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblCountEmployees;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;

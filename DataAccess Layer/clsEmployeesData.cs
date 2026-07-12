@@ -12,6 +12,28 @@ namespace DataAccess_Layer
     public class clsEmployeesData
     {
 
+        public static int TotalEmployee()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT COUNT(*) FROM Employees";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        return (int)command.ExecuteScalar();
+                    }
+                }
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
+
         public static int AddNewEmployee( string FullName, string Phone,
             string Role, string salary, DateTime Hiredate, bool IsActive)
         {

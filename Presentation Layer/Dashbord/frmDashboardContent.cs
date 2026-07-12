@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,14 @@ namespace Presentation_Layer.Dashbord
         public frmDashboardContent()
         {
             InitializeComponent();
+            GetTotalEmployee();
         }
+
+        public void GetTotalEmployee()
+        {
+            int Count = clsEmployee.GetEmployeeCount();
+            lblCountEmployees.Text = "+ " + Count.ToString();
+        }
+
     }
 }
