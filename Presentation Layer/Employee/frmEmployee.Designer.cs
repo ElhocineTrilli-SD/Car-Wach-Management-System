@@ -239,6 +239,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(175, 55);
             this.guna2Button2.TabIndex = 71;
             this.guna2Button2.Text = "Delete";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button3
             // 

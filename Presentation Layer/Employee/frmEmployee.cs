@@ -132,5 +132,40 @@ namespace Presentation_Layer.Employee
             }
             }
 
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            int EmpID = (int)dgvEmployees.CurrentRow.Cells[0].Value;
+
+            DialogResult result = MessageBox.Show(
+                              "Are you sure you want to delete this employee?",
+                              "Confirm Delete",
+                              MessageBoxButtons.YesNo,
+                              MessageBoxIcon.Warning
+                              );
+
+            if (result == DialogResult.Yes)
+            {
+                // delete Code : 
+                if (clsEmployee.DeleteEmployee(EmpID))
+                {
+                    MessageBox.Show(
+                                    "The employee with ID " + EmpID + " was deleted successfully.",
+                                    "Delete Successful",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information
+                                   );
+                    frmEmployee_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show(
+                                    "Failed to delete the employee with ID " + EmpID + ". Please try again.",
+                                    "Delete Failed",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error
+                                   );
+                }
+            }
         }
+    }
     }
