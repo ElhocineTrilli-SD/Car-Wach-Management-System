@@ -33,5 +33,11 @@ namespace Business_Layer
            
             return clsEmployeesData.AddNewEmployee(FullName, Phone, Role, salary, Hiredate, IsActive) > 0;
         }
+
+        public static bool DeleteEmployee(int EmployeeID)
+        {
+            return clsEmployeesData.DeleteEmployee(EmployeeID) > 0;
+        }
+
     }
 }

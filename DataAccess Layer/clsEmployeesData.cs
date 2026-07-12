@@ -78,8 +78,8 @@ namespace DataAccess_Layer
                 using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
                 {
                     connection.Open();
-                    string Query = @"Delete from Salaries where EmployeeID = @EmpID
-                                     Delete from Employees where EmpID = @EmpID ";
+                    string Query = @"Delete from Employees where EmployeeID = @EmpID
+                                     ";
 
 
                     using (SqlCommand command = new SqlCommand(Query, connection))
