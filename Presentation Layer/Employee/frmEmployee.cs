@@ -100,5 +100,37 @@ namespace Presentation_Layer.Employee
         {
             RefrechEmployeeList();
         }
-    }
+
+        private void addemployee_Click(object sender, EventArgs e)
+        {
+            if (txtEmployeeFullName.Text == "" || txtPhone.Text == "" || txtRole.Text == "" || txtSalary.Text == "")
+            {
+                MessageBox.Show("Missing Data !!!");
+            }
+            else
+            {
+                string FullName = txtEmployeeFullName.Text;
+                bool IsActive = cbIsActive.SelectedIndex == 0;
+                string Phone = txtPhone.Text;
+                string role = txtRole.Text;
+                string Salary = txtSalary.Text;
+                DateTime HireDate = dtpHireDate.Value.Date;
+
+                if (clsEmployee.AddNewEmployee(FullName,Phone,role,Salary,HireDate,IsActive))
+                {
+                    MessageBox.Show("The new employee has been added successfully.", "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                     );
+                    frmEmployee_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add the new employee.", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            }
+
+        }
     }

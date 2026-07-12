@@ -256,6 +256,7 @@
             this.guna2Button3.Size = new System.Drawing.Size(175, 55);
             this.guna2Button3.TabIndex = 72;
             this.guna2Button3.Text = "Add Employee";
+            this.guna2Button3.Click += new System.EventHandler(this.addemployee_Click);
             // 
             // dgvEmployees
             // 
