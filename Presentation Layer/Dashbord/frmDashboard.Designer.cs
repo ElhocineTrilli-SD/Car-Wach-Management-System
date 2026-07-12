@@ -43,7 +43,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.header1 = new Presentation_Layer.Controls.Header();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -89,6 +88,7 @@
             this.btnLogout.Size = new System.Drawing.Size(150, 45);
             this.btnLogout.TabIndex = 54;
             this.btnLogout.Text = "LogOut";
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnTransactions
             // 
@@ -205,7 +205,6 @@
             this.pnlContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.pnlContainer.BorderRadius = 15;
             this.pnlContainer.Controls.Add(this.guna2CustomGradientPanel7);
-            this.pnlContainer.Controls.Add(this.label4);
             this.pnlContainer.Location = new System.Drawing.Point(203, 75);
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(1061, 584);
@@ -258,18 +257,6 @@
             this.label8.TabIndex = 66;
             this.label8.Text = "Total Revenue";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(13, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 30);
-            this.label4.TabIndex = 56;
-            this.label4.Text = "Dashboard";
-            // 
             // header1
             // 
             this.header1.Location = new System.Drawing.Point(205, 15);
@@ -277,7 +264,7 @@
             this.header1.Size = new System.Drawing.Size(1059, 54);
             this.header1.TabIndex = 51;
             // 
-            // frmDashbord
+            // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -288,14 +275,13 @@
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
-            this.Name = "frmDashbord";
+            this.Name = "frmDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDashbord";
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlContainer.ResumeLayout(false);
-            this.pnlContainer.PerformLayout();
             this.guna2CustomGradientPanel7.ResumeLayout(false);
             this.guna2CustomGradientPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).EndInit();
@@ -319,7 +305,6 @@
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label4;
         private Controls.Header header1;
     }
 }

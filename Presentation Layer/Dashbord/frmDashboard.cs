@@ -128,5 +128,13 @@ namespace Presentation_Layer.Dashbord
             OpenChildForm(content);
 
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            frmLogin frm = new frmLogin();
+            frm.Show();
+            this.Close();
+
+        }
     }
 }
