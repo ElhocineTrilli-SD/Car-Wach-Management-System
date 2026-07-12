@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using Presentation_Layer.Dashbord;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,7 +58,9 @@ namespace Presentation_Layer
 
             if (txtPassword.Text == "admin" && txtUserName.Text == "admin")
             {
-                MessageBox.Show("success");
+                //MessageBox.Show("success");
+                frmDashboard frmDashboard = new frmDashboard();
+                frmDashboard.ShowDialog();
             }
             else
             {
