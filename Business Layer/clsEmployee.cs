@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +11,9 @@ namespace Business_Layer
 {
     public class clsEmployee
     {
+
+        private int EmployeeID;
+
         public static DataTable GetAllEmployee()
         {
             //call DataAccess;
@@ -23,6 +27,11 @@ namespace Business_Layer
             return clsEmployeesData.UpdateEmployee(ID, FullName, Phone, Role, salary, Hiredate, IsActive) > 0;
         }
 
-
+        public static bool AddNewEmployee(string FullName, string Phone,
+           string Role, string salary, DateTime Hiredate, bool IsActive)
+        {
+           
+            return clsEmployeesData.AddNewEmployee(FullName, Phone, Role, salary, Hiredate, IsActive) > 0;
+        }
     }
 }

@@ -5,31 +5,41 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DataAccess_Layer
 {
     public class clsEmployeesData
     {
 
-        public static int AddNewEmployee(string Name, string Gender, string Phone, string Position, int Salary, string JDate)
+        public static int AddNewEmployee( string FullName, string Phone,
+            string Role, string salary, DateTime Hiredate, bool IsActive)
         {
-            int RowAffected = 0;
+            int EmpID = 0;
             try
             {
                 using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
                 {
                     connection.Open();
-                    string Query = "insert into Employees values('{0}','{1}','{2}','{3}','{4}','{5}')";
-                    Query = string.Format(Query, Name, Gender, Phone, Position, Salary, JDate);
+                    string Query = @"INSERT INTO Employees
+                 VALUES('{0}','{1}','{2}','{3}','{4}','{5}');
+                 SELECT SCOPE_IDENTITY();";
+
+
+                    Query = string.Format(Query,FullName,Phone,Role,salary,Hiredate,IsActive);
 
                     using (SqlCommand command = new SqlCommand(Query, connection))
                     {
-                        RowAffected = command.ExecuteNonQuery();
+                        object Result = command.ExecuteScalar();
+                        if (Result != null && int.TryParse(Result.ToString(), out int insertedID))
+                        {
+                            EmpID = insertedID;
+                        }
                     }
                 }
             }
             catch (Exception ex) { }
-            return RowAffected;
+            return EmpID;
         }
 
         public static DataTable GetAllEmployee()
