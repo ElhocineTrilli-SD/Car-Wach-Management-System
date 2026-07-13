@@ -36,6 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnclose = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -44,7 +45,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.btnclose = new Guna.UI2.WinForms.Guna2Button();
+            this.cbRememberMe = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2CustomGradientPanel2.SuspendLayout();
@@ -106,6 +107,7 @@
             // 
             this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.White;
             this.guna2CustomGradientPanel2.BorderRadius = 15;
+            this.guna2CustomGradientPanel2.Controls.Add(this.cbRememberMe);
             this.guna2CustomGradientPanel2.Controls.Add(this.guna2Button1);
             this.guna2CustomGradientPanel2.Controls.Add(this.btnclose);
             this.guna2CustomGradientPanel2.Controls.Add(this.label2);
@@ -141,6 +143,24 @@
             this.guna2Button1.TabIndex = 51;
             this.guna2Button1.Text = "Reset";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // btnclose
+            // 
+            this.btnclose.BackColor = System.Drawing.Color.Transparent;
+            this.btnclose.CausesValidation = false;
+            this.btnclose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnclose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnclose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnclose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnclose.FillColor = System.Drawing.Color.Transparent;
+            this.btnclose.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnclose.ForeColor = System.Drawing.Color.White;
+            this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
+            this.btnclose.Location = new System.Drawing.Point(345, 3);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(47, 36);
+            this.btnclose.TabIndex = 50;
+            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
             // label2
             // 
@@ -237,23 +257,24 @@
             this.guna2Elipse2.BorderRadius = 10;
             this.guna2Elipse2.TargetControl = this;
             // 
-            // btnclose
+            // cbRememberMe
             // 
-            this.btnclose.BackColor = System.Drawing.Color.Transparent;
-            this.btnclose.CausesValidation = false;
-            this.btnclose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnclose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnclose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnclose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnclose.FillColor = System.Drawing.Color.Transparent;
-            this.btnclose.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnclose.ForeColor = System.Drawing.Color.White;
-            this.btnclose.Image = ((System.Drawing.Image)(resources.GetObject("btnclose.Image")));
-            this.btnclose.Location = new System.Drawing.Point(345, 3);
-            this.btnclose.Name = "btnclose";
-            this.btnclose.Size = new System.Drawing.Size(47, 36);
-            this.btnclose.TabIndex = 50;
-            this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
+            this.cbRememberMe.AutoSize = true;
+            this.cbRememberMe.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbRememberMe.CheckedState.BorderRadius = 0;
+            this.cbRememberMe.CheckedState.BorderThickness = 0;
+            this.cbRememberMe.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbRememberMe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRememberMe.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cbRememberMe.Location = new System.Drawing.Point(44, 335);
+            this.cbRememberMe.Name = "cbRememberMe";
+            this.cbRememberMe.Size = new System.Drawing.Size(116, 21);
+            this.cbRememberMe.TabIndex = 52;
+            this.cbRememberMe.Text = "Remember Me";
+            this.cbRememberMe.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cbRememberMe.UncheckedState.BorderRadius = 0;
+            this.cbRememberMe.UncheckedState.BorderThickness = 0;
+            this.cbRememberMe.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // frmLogin
             // 
@@ -295,6 +316,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2Button btnclose;
+        private Guna.UI2.WinForms.Guna2CheckBox cbRememberMe;
     }
 }
 

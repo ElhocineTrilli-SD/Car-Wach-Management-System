@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using Presentation_Layer.Dashbord;
+using Presentation_Layer.GlobalClasses;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,8 +35,18 @@ namespace Presentation_Layer
         }
         private void frmLogin_Load(object sender, EventArgs e)
         {
-           
-
+            string Username = "", Password = "";
+            if(GlobalClass.GetStoredCredential(ref Username, ref Password))
+            {
+                txtUserName.Text = Username;
+                txtPassword.Text = Password;
+                cbRememberMe.Checked = true;
+            }
+            else
+            {
+                cbRememberMe.Checked = false;
+            }
+              
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -58,7 +69,16 @@ namespace Presentation_Layer
 
             if (txtPassword.Text == "admin" && txtUserName.Text == "admin")
             {
-                //MessageBox.Show("success");
+                if(cbRememberMe.Checked)
+                {
+                    GlobalClass.RememberUsernameAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+                }
+                else
+                {
+                    GlobalClass.RememberUsernameAndPassword("","");
+
+                }
+
                 frmDashboard frmDashboard = new frmDashboard();
                 frmDashboard.ShowDialog();
             }
