@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,34 @@ namespace Presentation_Layer.Customer
 {
     public partial class frmCustomer : Form
     {
+        public DataTable _dtCustomers;
         public frmCustomer()
         {
             InitializeComponent();
+        }
+        public void RefrechEmployeeList()
+        {
+            _dtCustomers = clsCustomer.GetAllCustomers();
+            dgvCustomer.DataSource = _dtCustomers;
+        }
+        private void frmCustomer_Load(object sender, EventArgs e)
+        {
+            RefrechEmployeeList();
+        }
+
+        private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvCustomer.Rows[e.RowIndex];
+
+                txtFullName.Text = row.Cells[1].Value.ToString();
+                txtPhone.Text = row.Cells[2].Value.ToString();
+                txtCarPlateNumber.Text = row.Cells[3].Value.ToString();
+                txtCarBrand.Text = row.Cells[4].Value.ToString();
+                txtCarModel.Text = row.Cells[5].Value.ToString();
+                txtCarColor.Text = row.Cells[6].Value.ToString();
+            }
         }
     }
 }
