@@ -42,5 +42,83 @@ namespace Presentation_Layer.Customer
                 txtCarColor.Text = row.Cells[6].Value.ToString();
             }
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            int CustomerID = (int)dgvCustomer.CurrentRow.Cells[0].Value;
+            string FullName = txtFullName.Text;
+            string Phone = txtPhone.Text;
+            string CarPlateNumber = txtCarPlateNumber.Text;
+            string CarBrand = txtCarBrand.Text;
+            string CarModel = txtCarModel.Text;
+            string CarColor = txtCarColor.Text;
+
+
+            DialogResult result = MessageBox.Show(
+                           "Are you sure you want to update Customer Info?",
+                           "Confirm Update",
+                           MessageBoxButtons.YesNo,
+                           MessageBoxIcon.Warning
+                           );
+
+            if (result == DialogResult.Yes)
+            {
+                // Update Code : 
+                if (clsCustomer.UpdateEmployee(CustomerID, FullName, Phone, CarPlateNumber, CarBrand, CarModel, CarColor))
+                {
+                    MessageBox.Show(
+                                    "The customer with ID " + CustomerID + " was updated successfully.",
+                                    "Update Successful",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information
+                                   );
+                    frmCustomer_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show(
+                                    "Failed to update the customer info Please try again.",
+                                    "Update Failed",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error
+                                   );
+                }
+            }
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            if (txtFullName.Text == "" || txtPhone.Text == "" || txtCarPlateNumber.Text == ""
+                || txtCarModel.Text == "" || txtCarColor.Text == "" || txtCarBrand.Text == "")
+            {
+                MessageBox.Show("Missing Data !!!");
+            }
+            else
+            {
+
+                int CustomerID = (int)dgvCustomer.CurrentRow.Cells[0].Value;
+                string FullName = txtFullName.Text;
+                string Phone = txtPhone.Text;
+                string CarPlateNumber = txtCarPlateNumber.Text;
+                string CarBrand = txtCarBrand.Text;
+                string CarModel = txtCarModel.Text;
+                string CarColor = txtCarColor.Text;
+
+                if (clsCustomer.AddNewCustomer(FullName, Phone, CarPlateNumber, CarBrand, CarModel, CarColor))
+                {
+                    MessageBox.Show("The new Customer has been added successfully.", "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                     );
+                    frmCustomer_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add the new Customer.", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
+

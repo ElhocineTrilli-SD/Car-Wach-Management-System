@@ -60,7 +60,6 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCustomer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCustomer.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,6 +238,7 @@
             this.guna2Button3.Size = new System.Drawing.Size(175, 55);
             this.guna2Button3.TabIndex = 84;
             this.guna2Button3.Text = "Add Employee";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button2
             // 
@@ -273,6 +273,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(175, 55);
             this.guna2Button1.TabIndex = 82;
             this.guna2Button1.Text = "Edit ";
+            this.guna2Button1.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // txtCarModel
             // 
