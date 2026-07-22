@@ -123,6 +123,7 @@
             this.btnServices.Size = new System.Drawing.Size(150, 45);
             this.btnServices.TabIndex = 52;
             this.btnServices.Text = "Services";
+            this.btnServices.Click += new System.EventHandler(this.btnServices_Click);
             // 
             // btnCustomer
             // 

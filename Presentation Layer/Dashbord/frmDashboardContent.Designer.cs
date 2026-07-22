@@ -31,27 +31,30 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboardContent));
             this.guna2CustomGradientPanel7 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.label10 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel5 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox5 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel6 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lblCountEmployees = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblCustomersCount = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.lblServicesCount = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
             this.guna2CustomGradientPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
             this.guna2CustomGradientPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.guna2CustomGradientPanel3.SuspendLayout();
@@ -61,7 +64,6 @@
             // guna2CustomGradientPanel7
             // 
             this.guna2CustomGradientPanel7.BorderRadius = 15;
-            this.guna2CustomGradientPanel7.Controls.Add(this.label10);
             this.guna2CustomGradientPanel7.Controls.Add(this.guna2CirclePictureBox4);
             this.guna2CustomGradientPanel7.Controls.Add(this.label8);
             this.guna2CustomGradientPanel7.Location = new System.Drawing.Point(774, 61);
@@ -69,26 +71,15 @@
             this.guna2CustomGradientPanel7.Size = new System.Drawing.Size(249, 126);
             this.guna2CustomGradientPanel7.TabIndex = 67;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.Color.Lime;
-            this.label10.Location = new System.Drawing.Point(198, 93);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 23);
-            this.label10.TabIndex = 63;
-            this.label10.Text = "+ 3";
-            // 
             // guna2CirclePictureBox4
             // 
+            this.guna2CirclePictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.guna2CirclePictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox4.Image")));
             this.guna2CirclePictureBox4.ImageRotate = 0F;
-            this.guna2CirclePictureBox4.Location = new System.Drawing.Point(14, 19);
+            this.guna2CirclePictureBox4.Location = new System.Drawing.Point(25, 19);
             this.guna2CirclePictureBox4.Name = "guna2CirclePictureBox4";
             this.guna2CirclePictureBox4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox4.Size = new System.Drawing.Size(81, 67);
+            this.guna2CirclePictureBox4.Size = new System.Drawing.Size(67, 67);
             this.guna2CirclePictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox4.TabIndex = 67;
             this.guna2CirclePictureBox4.TabStop = false;
@@ -108,37 +99,26 @@
             // guna2CustomGradientPanel5
             // 
             this.guna2CustomGradientPanel5.BorderRadius = 15;
-            this.guna2CustomGradientPanel5.Controls.Add(this.label11);
-            this.guna2CustomGradientPanel5.Controls.Add(this.guna2CirclePictureBox3);
+            this.guna2CustomGradientPanel5.Controls.Add(this.lblServicesCount);
+            this.guna2CustomGradientPanel5.Controls.Add(this.guna2CirclePictureBox5);
             this.guna2CustomGradientPanel5.Controls.Add(this.label7);
             this.guna2CustomGradientPanel5.Location = new System.Drawing.Point(519, 61);
             this.guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
             this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(249, 126);
             this.guna2CustomGradientPanel5.TabIndex = 65;
             // 
-            // label11
+            // guna2CirclePictureBox5
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.Lime;
-            this.label11.Location = new System.Drawing.Point(209, 93);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 23);
-            this.label11.TabIndex = 64;
-            this.label11.Text = "+ 3";
-            // 
-            // guna2CirclePictureBox3
-            // 
-            this.guna2CirclePictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox3.Image")));
-            this.guna2CirclePictureBox3.ImageRotate = 0F;
-            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(9, 19);
-            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
-            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(81, 67);
-            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox3.TabIndex = 65;
-            this.guna2CirclePictureBox3.TabStop = false;
+            this.guna2CirclePictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox5.Image")));
+            this.guna2CirclePictureBox5.ImageRotate = 0F;
+            this.guna2CirclePictureBox5.Location = new System.Drawing.Point(20, 19);
+            this.guna2CirclePictureBox5.Name = "guna2CirclePictureBox5";
+            this.guna2CirclePictureBox5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox5.Size = new System.Drawing.Size(67, 67);
+            this.guna2CirclePictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox5.TabIndex = 66;
+            this.guna2CirclePictureBox5.TabStop = false;
             // 
             // label7
             // 
@@ -168,22 +148,23 @@
             // 
             this.lblCountEmployees.AutoSize = true;
             this.lblCountEmployees.BackColor = System.Drawing.Color.Transparent;
-            this.lblCountEmployees.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold);
-            this.lblCountEmployees.ForeColor = System.Drawing.Color.Lime;
-            this.lblCountEmployees.Location = new System.Drawing.Point(100, 63);
+            this.lblCountEmployees.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountEmployees.ForeColor = System.Drawing.Color.Black;
+            this.lblCountEmployees.Location = new System.Drawing.Point(100, 49);
             this.lblCountEmployees.Name = "lblCountEmployees";
-            this.lblCountEmployees.Size = new System.Drawing.Size(47, 23);
+            this.lblCountEmployees.Size = new System.Drawing.Size(49, 37);
             this.lblCountEmployees.TabIndex = 65;
-            this.lblCountEmployees.Text = "+ 00";
+            this.lblCountEmployees.Text = "00";
             // 
             // guna2CirclePictureBox2
             // 
+            this.guna2CirclePictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.guna2CirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox2.Image")));
             this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(13, 19);
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(27, 19);
             this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
             this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(81, 67);
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(67, 67);
             this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox2.TabIndex = 63;
             this.guna2CirclePictureBox2.TabStop = false;
@@ -205,7 +186,7 @@
             this.guna2CustomGradientPanel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.guna2CustomGradientPanel3.BorderRadius = 15;
-            this.guna2CustomGradientPanel3.Controls.Add(this.label9);
+            this.guna2CustomGradientPanel3.Controls.Add(this.lblCustomersCount);
             this.guna2CustomGradientPanel3.Controls.Add(this.guna2CirclePictureBox1);
             this.guna2CustomGradientPanel3.Controls.Add(this.label5);
             this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(9, 61);
@@ -213,26 +194,26 @@
             this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(249, 126);
             this.guna2CustomGradientPanel3.TabIndex = 64;
             // 
-            // label9
+            // lblCustomersCount
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.Color.Lime;
-            this.label9.Location = new System.Drawing.Point(209, 93);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 23);
-            this.label9.TabIndex = 62;
-            this.label9.Text = "+ 3";
+            this.lblCustomersCount.AutoSize = true;
+            this.lblCustomersCount.BackColor = System.Drawing.Color.Transparent;
+            this.lblCustomersCount.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomersCount.ForeColor = System.Drawing.Color.Black;
+            this.lblCustomersCount.Location = new System.Drawing.Point(95, 49);
+            this.lblCustomersCount.Name = "lblCustomersCount";
+            this.lblCustomersCount.Size = new System.Drawing.Size(49, 37);
+            this.lblCustomersCount.TabIndex = 66;
+            this.lblCustomersCount.Text = "12";
             // 
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(8, 19);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(19, 19);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(81, 67);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(67, 67);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBox1.TabIndex = 61;
             this.guna2CirclePictureBox1.TabStop = false;
@@ -266,11 +247,53 @@
             this.guna2Elipse1.BorderRadius = 15;
             this.guna2Elipse1.TargetControl = this;
             // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.BorderRadius = 15;
+            this.guna2Panel1.Location = new System.Drawing.Point(10, 205);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(502, 352);
+            this.guna2Panel1.TabIndex = 69;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.BorderRadius = 15;
+            this.guna2Panel2.Location = new System.Drawing.Point(518, 205);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(502, 352);
+            this.guna2Panel2.TabIndex = 70;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 15;
+            this.guna2Elipse2.TargetControl = this.guna2Panel1;
+            // 
+            // guna2Elipse3
+            // 
+            this.guna2Elipse3.BorderRadius = 15;
+            this.guna2Elipse3.TargetControl = this.guna2Panel2;
+            // 
+            // lblServicesCount
+            // 
+            this.lblServicesCount.AutoSize = true;
+            this.lblServicesCount.BackColor = System.Drawing.Color.Transparent;
+            this.lblServicesCount.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServicesCount.ForeColor = System.Drawing.Color.Black;
+            this.lblServicesCount.Location = new System.Drawing.Point(103, 49);
+            this.lblServicesCount.Name = "lblServicesCount";
+            this.lblServicesCount.Size = new System.Drawing.Size(49, 37);
+            this.lblServicesCount.TabIndex = 67;
+            this.lblServicesCount.Text = "00";
+            // 
             // frmDashboardContent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 569);
+            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.guna2CustomGradientPanel7);
             this.Controls.Add(this.guna2CustomGradientPanel5);
@@ -279,12 +302,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDashboardContent";
             this.Text = "frmDashboardContent";
+            this.Load += new System.EventHandler(this.frmDashboardContent_Load);
             this.guna2CustomGradientPanel7.ResumeLayout(false);
             this.guna2CustomGradientPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).EndInit();
             this.guna2CustomGradientPanel5.ResumeLayout(false);
             this.guna2CustomGradientPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).EndInit();
             this.guna2CustomGradientPanel6.ResumeLayout(false);
             this.guna2CustomGradientPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
@@ -299,22 +323,25 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel7;
-        private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox4;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel5;
-        private System.Windows.Forms.Label label11;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel6;
         private System.Windows.Forms.Label lblCountEmployees;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
-        private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox5;
+        private System.Windows.Forms.Label lblCustomersCount;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
+        private System.Windows.Forms.Label lblServicesCount;
     }
 }

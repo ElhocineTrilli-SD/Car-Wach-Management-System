@@ -1,6 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using Presentation_Layer.Customer;
 using Presentation_Layer.Employee;
+using Presentation_Layer.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -141,6 +142,13 @@ namespace Presentation_Layer.Dashbord
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             frmCustomer frm = new frmCustomer();
+            frm.MdiParent = this;
+            OpenChildForm(frm);
+        }
+
+        private void btnServices_Click(object sender, EventArgs e)
+        {
+            frmServices frm = new frmServices();
             frm.MdiParent = this;
             OpenChildForm(frm);
         }

@@ -16,14 +16,22 @@ namespace Presentation_Layer.Dashbord
         public frmDashboardContent()
         {
             InitializeComponent();
-            GetTotalEmployee();
+            GetTotals();
         }
 
-        public void GetTotalEmployee()
+        public void GetTotals()
         {
             int Count = clsEmployee.GetEmployeeCount();
-            lblCountEmployees.Text = "+ " + Count.ToString();
+            lblCountEmployees.Text =  Count.ToString();
+            int CountCostomers = clsCustomer.GetCustomersCount();
+            lblCustomersCount.Text = CountCostomers.ToString();
+            int CountServices = clsService.GetServicesCount();
+            lblServicesCount.Text = CountServices.ToString();   
         }
 
+        private void frmDashboardContent_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
