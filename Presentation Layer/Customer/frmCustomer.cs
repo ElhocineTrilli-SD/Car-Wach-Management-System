@@ -119,6 +119,41 @@ namespace Presentation_Layer.Customer
                 }
             }
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            int ID = (int)dgvCustomer.CurrentRow.Cells[0].Value;
+            DialogResult result = MessageBox.Show(
+                             "Are you sure you want to delete this customer?",
+                             "Confirm Delete",
+                             MessageBoxButtons.YesNo,
+                             MessageBoxIcon.Warning
+                             );
+
+            if (result == DialogResult.Yes)
+            {
+                // delete Code : 
+                if (clsCustomer.DeleteCustomer(ID))
+                {
+                    MessageBox.Show(
+                                    "The customer with ID " + ID + " was deleted successfully.",
+                                    "Delete Successful",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information
+                                   );
+                    frmCustomer_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show(
+                                    "Failed to delete the customer with ID " + ID + ". Please try again.",
+                                    "Delete Failed",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error
+                                   );
+                }
+            }
+        }
     }
 }
 

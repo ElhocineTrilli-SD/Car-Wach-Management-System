@@ -35,5 +35,9 @@ namespace Business_Layer
 
             return clsCustomerData.AddNewCustomer(FullName,Phone,CarPlateNumber,CarBrand,CarModel,CarColor) > 0;
         }
+        public static bool DeleteCustomer(int ID)
+        {
+            return clsCustomerData.DeleteCustomer(ID) > 0;
+        }
     }
 }

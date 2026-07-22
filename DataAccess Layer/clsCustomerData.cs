@@ -135,6 +135,30 @@ namespace DataAccess_Layer
             return CustomerID;
         }
 
+        public static int DeleteCustomer(int ID)
+        {
+            int RowAffected = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
+                {
+                    connection.Open();
+                    string Query = @"Delete from Customers where CustomerID = @ID
+                                     ";
+
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ID", ID);
+                        RowAffected = command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex) { }
+            return RowAffected;
+
+        }
+
 
     }
 }
