@@ -64,6 +64,33 @@ namespace DataAccess_Layer
             return ID;
         }
 
+        public static decimal GetTotalRevenue()
+        {
+            decimal totalRevenue = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
+                {
+                    connection.Open();
+                    string query = @"SELECT ISNULL(SUM(AmountPaid), 0) 
+FROM Transactions;";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        object result = command.ExecuteScalar();
+
+                        if (result != null)
+                            totalRevenue = Convert.ToDecimal(result);
+                    }
+                }
+            }
+            catch
+            {
+                return 0;
+            }
+            return totalRevenue; 
+        }
+        //
 
         public static DataTable GetAllTransactions()
         {

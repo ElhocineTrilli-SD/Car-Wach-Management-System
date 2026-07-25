@@ -26,7 +26,9 @@ namespace Presentation_Layer.Dashbord
             int CountCostomers = clsCustomer.GetCustomersCount();
             lblCustomersCount.Text = CountCostomers.ToString();
             int CountServices = clsService.GetServicesCount();
-            lblServicesCount.Text = CountServices.ToString();   
+            lblServicesCount.Text = CountServices.ToString();
+            decimal Revenue = clsTransactions.TotalRevenue();
+           TotalRevenue.Text = Revenue.ToString();
         }
 
         private void frmDashboardContent_Load(object sender, EventArgs e)

@@ -106,6 +106,7 @@
             this.btnTransactions.Size = new System.Drawing.Size(148, 45);
             this.btnTransactions.TabIndex = 53;
             this.btnTransactions.Text = "Transactions";
+            this.btnTransactions.Click += new System.EventHandler(this.btnTransactions_Click);
             // 
             // btnServices
             // 

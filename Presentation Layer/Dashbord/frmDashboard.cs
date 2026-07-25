@@ -2,6 +2,7 @@
 using Presentation_Layer.Customer;
 using Presentation_Layer.Employee;
 using Presentation_Layer.Services;
+using Presentation_Layer.Transactions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -149,6 +150,13 @@ namespace Presentation_Layer.Dashbord
         private void btnServices_Click(object sender, EventArgs e)
         {
             frmServices frm = new frmServices();
+            frm.MdiParent = this;
+            OpenChildForm(frm);
+        }
+
+        private void btnTransactions_Click(object sender, EventArgs e)
+        {
+            frmTransactions frm = new frmTransactions();
             frm.MdiParent = this;
             OpenChildForm(frm);
         }

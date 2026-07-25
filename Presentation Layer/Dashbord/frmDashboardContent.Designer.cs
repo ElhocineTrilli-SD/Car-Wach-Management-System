@@ -31,9 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboardContent));
             this.guna2CustomGradientPanel7 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.TotalRevenue = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel5 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.lblServicesCount = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox5 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel6 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -50,7 +52,6 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.lblServicesCount = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
             this.guna2CustomGradientPanel5.SuspendLayout();
@@ -64,12 +65,25 @@
             // guna2CustomGradientPanel7
             // 
             this.guna2CustomGradientPanel7.BorderRadius = 15;
+            this.guna2CustomGradientPanel7.Controls.Add(this.TotalRevenue);
             this.guna2CustomGradientPanel7.Controls.Add(this.guna2CirclePictureBox4);
             this.guna2CustomGradientPanel7.Controls.Add(this.label8);
             this.guna2CustomGradientPanel7.Location = new System.Drawing.Point(774, 61);
             this.guna2CustomGradientPanel7.Name = "guna2CustomGradientPanel7";
             this.guna2CustomGradientPanel7.Size = new System.Drawing.Size(249, 126);
             this.guna2CustomGradientPanel7.TabIndex = 67;
+            // 
+            // TotalRevenue
+            // 
+            this.TotalRevenue.AutoSize = true;
+            this.TotalRevenue.BackColor = System.Drawing.Color.Transparent;
+            this.TotalRevenue.Font = new System.Drawing.Font("Segoe UI Black", 20.25F, System.Drawing.FontStyle.Bold);
+            this.TotalRevenue.ForeColor = System.Drawing.Color.Lime;
+            this.TotalRevenue.Location = new System.Drawing.Point(98, 49);
+            this.TotalRevenue.Name = "TotalRevenue";
+            this.TotalRevenue.Size = new System.Drawing.Size(92, 37);
+            this.TotalRevenue.TabIndex = 68;
+            this.TotalRevenue.Text = "+ 689";
             // 
             // guna2CirclePictureBox4
             // 
@@ -106,6 +120,18 @@
             this.guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
             this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(249, 126);
             this.guna2CustomGradientPanel5.TabIndex = 65;
+            // 
+            // lblServicesCount
+            // 
+            this.lblServicesCount.AutoSize = true;
+            this.lblServicesCount.BackColor = System.Drawing.Color.Transparent;
+            this.lblServicesCount.Font = new System.Drawing.Font("Segoe UI Black", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lblServicesCount.ForeColor = System.Drawing.Color.Black;
+            this.lblServicesCount.Location = new System.Drawing.Point(103, 49);
+            this.lblServicesCount.Name = "lblServicesCount";
+            this.lblServicesCount.Size = new System.Drawing.Size(46, 37);
+            this.lblServicesCount.TabIndex = 67;
+            this.lblServicesCount.Text = "18";
             // 
             // guna2CirclePictureBox5
             // 
@@ -148,13 +174,13 @@
             // 
             this.lblCountEmployees.AutoSize = true;
             this.lblCountEmployees.BackColor = System.Drawing.Color.Transparent;
-            this.lblCountEmployees.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountEmployees.Font = new System.Drawing.Font("Segoe UI Black", 20.25F, System.Drawing.FontStyle.Bold);
             this.lblCountEmployees.ForeColor = System.Drawing.Color.Black;
             this.lblCountEmployees.Location = new System.Drawing.Point(100, 49);
             this.lblCountEmployees.Name = "lblCountEmployees";
-            this.lblCountEmployees.Size = new System.Drawing.Size(49, 37);
+            this.lblCountEmployees.Size = new System.Drawing.Size(62, 37);
             this.lblCountEmployees.TabIndex = 65;
-            this.lblCountEmployees.Text = "00";
+            this.lblCountEmployees.Text = "190";
             // 
             // guna2CirclePictureBox2
             // 
@@ -198,13 +224,13 @@
             // 
             this.lblCustomersCount.AutoSize = true;
             this.lblCustomersCount.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustomersCount.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomersCount.Font = new System.Drawing.Font("Segoe UI Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomersCount.ForeColor = System.Drawing.Color.Black;
             this.lblCustomersCount.Location = new System.Drawing.Point(95, 49);
             this.lblCustomersCount.Name = "lblCustomersCount";
-            this.lblCustomersCount.Size = new System.Drawing.Size(49, 37);
+            this.lblCustomersCount.Size = new System.Drawing.Size(62, 37);
             this.lblCustomersCount.TabIndex = 66;
-            this.lblCustomersCount.Text = "12";
+            this.lblCustomersCount.Text = "120";
             // 
             // guna2CirclePictureBox1
             // 
@@ -275,18 +301,6 @@
             this.guna2Elipse3.BorderRadius = 15;
             this.guna2Elipse3.TargetControl = this.guna2Panel2;
             // 
-            // lblServicesCount
-            // 
-            this.lblServicesCount.AutoSize = true;
-            this.lblServicesCount.BackColor = System.Drawing.Color.Transparent;
-            this.lblServicesCount.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServicesCount.ForeColor = System.Drawing.Color.Black;
-            this.lblServicesCount.Location = new System.Drawing.Point(103, 49);
-            this.lblServicesCount.Name = "lblServicesCount";
-            this.lblServicesCount.Size = new System.Drawing.Size(49, 37);
-            this.lblServicesCount.TabIndex = 67;
-            this.lblServicesCount.Text = "00";
-            // 
             // frmDashboardContent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,5 +357,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
         private System.Windows.Forms.Label lblServicesCount;
+        private System.Windows.Forms.Label TotalRevenue;
     }
 }
