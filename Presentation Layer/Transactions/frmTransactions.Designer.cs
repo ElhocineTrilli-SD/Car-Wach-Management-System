@@ -40,8 +40,15 @@
             this.dgvTransactions = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.txtFullName = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbCustomer = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbEmployee = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbService = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtAmount = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPaymentMethod = new Guna.UI2.WinForms.Guna2TextBox();
+            this.TDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,7 +108,7 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OldLace;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTransactions.DefaultCellStyle = dataGridViewCellStyle3;
@@ -147,11 +154,8 @@
             // guna2CustomGradientPanel1
             // 
             this.guna2CustomGradientPanel1.BorderRadius = 15;
-            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.AliceBlue;
-            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.AliceBlue;
-            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.DodgerBlue;
-            this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.AliceBlue;
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(12, 232);
+            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.DodgerBlue;
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(12, 219);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1010, 10);
             this.guna2CustomGradientPanel1.TabIndex = 92;
@@ -167,55 +171,183 @@
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
             this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.Location = new System.Drawing.Point(17, 63);
+            this.guna2Button3.Location = new System.Drawing.Point(685, 123);
             this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(175, 90);
+            this.guna2Button3.Size = new System.Drawing.Size(175, 42);
             this.guna2Button3.TabIndex = 93;
-            this.guna2Button3.Text = "Add Customer";
-            // 
-            // txtFullName
-            // 
-            this.txtFullName.BorderRadius = 10;
-            this.txtFullName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFullName.DefaultText = "";
-            this.txtFullName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtFullName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtFullName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFullName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFullName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFullName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFullName.Location = new System.Drawing.Point(215, 168);
-            this.txtFullName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.PlaceholderText = "Full Name";
-            this.txtFullName.SelectedText = "";
-            this.txtFullName.Size = new System.Drawing.Size(239, 49);
-            this.txtFullName.TabIndex = 94;
+            this.guna2Button3.Text = "Add Billing";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // cbCustomer
             // 
             this.cbCustomer.BackColor = System.Drawing.Color.Transparent;
             this.cbCustomer.BorderRadius = 10;
             this.cbCustomer.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbCustomer.DropDownHeight = 300;
             this.cbCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCustomer.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbCustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbCustomer.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbCustomer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbCustomer.IntegralHeight = false;
             this.cbCustomer.ItemHeight = 30;
-            this.cbCustomer.Location = new System.Drawing.Point(215, 63);
+            this.cbCustomer.Items.AddRange(new object[] {
+            "None"});
+            this.cbCustomer.Location = new System.Drawing.Point(182, 68);
             this.cbCustomer.Name = "cbCustomer";
             this.cbCustomer.Size = new System.Drawing.Size(186, 36);
+            this.cbCustomer.StartIndex = 0;
             this.cbCustomer.TabIndex = 95;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(34, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 23);
+            this.label1.TabIndex = 96;
+            this.label1.Text = "Customer name : ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(34, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(147, 23);
+            this.label3.TabIndex = 98;
+            this.label3.Text = "Employee name :";
+            // 
+            // cbEmployee
+            // 
+            this.cbEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.cbEmployee.BorderRadius = 10;
+            this.cbEmployee.DisplayMember = "(none)";
+            this.cbEmployee.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbEmployee.DropDownHeight = 300;
+            this.cbEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEmployee.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbEmployee.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbEmployee.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbEmployee.IntegralHeight = false;
+            this.cbEmployee.ItemHeight = 30;
+            this.cbEmployee.Items.AddRange(new object[] {
+            "None"});
+            this.cbEmployee.Location = new System.Drawing.Point(182, 123);
+            this.cbEmployee.Name = "cbEmployee";
+            this.cbEmployee.Size = new System.Drawing.Size(186, 36);
+            this.cbEmployee.StartIndex = 0;
+            this.cbEmployee.TabIndex = 97;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(34, 182);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(132, 23);
+            this.label5.TabIndex = 100;
+            this.label5.Text = "Service name : ";
+            // 
+            // cbService
+            // 
+            this.cbService.BackColor = System.Drawing.Color.Transparent;
+            this.cbService.BorderRadius = 10;
+            this.cbService.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbService.DropDownHeight = 300;
+            this.cbService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbService.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbService.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbService.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbService.IntegralHeight = false;
+            this.cbService.ItemHeight = 30;
+            this.cbService.Items.AddRange(new object[] {
+            "None"});
+            this.cbService.Location = new System.Drawing.Point(182, 176);
+            this.cbService.Name = "cbService";
+            this.cbService.Size = new System.Drawing.Size(186, 36);
+            this.cbService.StartIndex = 0;
+            this.cbService.TabIndex = 99;
+            this.cbService.SelectedIndexChanged += new System.EventHandler(this.cbService_SelectedIndexChanged);
+            this.cbService.Click += new System.EventHandler(this.cbService_Click);
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.BorderRadius = 10;
+            this.txtAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAmount.DefaultText = "";
+            this.txtAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtAmount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtAmount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAmount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAmount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAmount.Location = new System.Drawing.Point(403, 176);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.PlaceholderText = "AmountPaid";
+            this.txtAmount.SelectedText = "";
+            this.txtAmount.Size = new System.Drawing.Size(239, 36);
+            this.txtAmount.TabIndex = 101;
+            // 
+            // txtPaymentMethod
+            // 
+            this.txtPaymentMethod.BorderRadius = 10;
+            this.txtPaymentMethod.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPaymentMethod.DefaultText = "";
+            this.txtPaymentMethod.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPaymentMethod.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPaymentMethod.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPaymentMethod.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPaymentMethod.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPaymentMethod.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPaymentMethod.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPaymentMethod.Location = new System.Drawing.Point(403, 68);
+            this.txtPaymentMethod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPaymentMethod.Name = "txtPaymentMethod";
+            this.txtPaymentMethod.PlaceholderText = "Payment method";
+            this.txtPaymentMethod.SelectedText = "";
+            this.txtPaymentMethod.Size = new System.Drawing.Size(239, 36);
+            this.txtPaymentMethod.TabIndex = 102;
+            // 
+            // TDate
+            // 
+            this.TDate.BorderRadius = 10;
+            this.TDate.Checked = true;
+            this.TDate.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.TDate.Location = new System.Drawing.Point(408, 123);
+            this.TDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.TDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.TDate.Name = "TDate";
+            this.TDate.Size = new System.Drawing.Size(234, 36);
+            this.TDate.TabIndex = 103;
+            this.TDate.Value = new System.DateTime(2026, 7, 24, 22, 50, 22, 976);
             // 
             // frmTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 569);
+            this.Controls.Add(this.TDate);
+            this.Controls.Add(this.txtPaymentMethod);
+            this.Controls.Add(this.txtAmount);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cbService);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbEmployee);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cbCustomer);
-            this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.guna2Button3);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.dgvTransactions);
@@ -240,6 +372,13 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2ComboBox cbCustomer;
-        private Guna.UI2.WinForms.Guna2TextBox txtFullName;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2ComboBox cbEmployee;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2ComboBox cbService;
+        private Guna.UI2.WinForms.Guna2DateTimePicker TDate;
+        private Guna.UI2.WinForms.Guna2TextBox txtPaymentMethod;
+        private Guna.UI2.WinForms.Guna2TextBox txtAmount;
     }
 }

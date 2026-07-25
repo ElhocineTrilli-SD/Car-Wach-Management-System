@@ -20,7 +20,12 @@ namespace Business_Layer
 
             return clsEmployeesData.GetAllEmployee();
         }
+        public static DataTable GetEmployeeNames()
+        {
+            //call DataAccess;
 
+            return clsEmployeesData.GetEmployeesNames();
+        }
         public static bool UpdateEmployee(int ID, string FullName, string Phone,
             string Role, string salary, DateTime Hiredate, bool IsActive)
         {

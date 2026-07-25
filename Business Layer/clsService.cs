@@ -16,7 +16,17 @@ namespace Business_Layer
 
             return clsServiceData.GetAllServices();
         }
+        public static DataTable GetServicesNames()
+        {
+            //call DataAccess;
 
+            return clsServiceData.GetServicesNames();
+        }
+        public static decimal GetServicePriceByID(int ServiceID)
+        {
+            // ترجع سعر الخدمة من قاعدة البيانات
+            return clsServiceData.GetServicePrice(ServiceID);
+        }
         public static int GetServicesCount()
         {
             return clsServiceData.TotalServices();

@@ -32,7 +32,37 @@ namespace DataAccess_Layer
             }
 
         }
-        
+
+        public static int AddPayment(int CustomerID, int EmployeeID,
+            int ServiceID, DateTime TransactinsDate, Decimal AmountPaid, string PaymentMethod)
+        {                               
+            int ID = 0;              
+            try                          
+            {                            
+                using (SqlConnection connstring = new SqlConnection(clsConnection.DBConnectionString))
+                {
+                    connstring.Open();
+                    string Query = @"INSERT INTO Transactions
+                 VALUES('{0}','{1}','{2}','{3}','{4}','{5}');
+                 SELECT SCOPE_IDENTITY();";
+
+
+                    Query = string.Format(Query, CustomerID, EmployeeID, ServiceID,
+                        TransactinsDate, AmountPaid, PaymentMethod);
+
+                    using (SqlCommand command = new SqlCommand(Query, connstring))
+                    {
+                        object Result = command.ExecuteScalar();
+                        if (Result != null && int.TryParse(Result.ToString(), out int insertedID))
+                        {
+                            ID = insertedID;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { }
+            return ID;
+        }
 
 
         public static DataTable GetAllTransactions()

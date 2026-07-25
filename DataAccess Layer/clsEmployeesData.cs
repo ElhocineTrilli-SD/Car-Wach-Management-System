@@ -91,6 +91,43 @@ namespace DataAccess_Layer
             ;
             return dt;
         }
+        public static DataTable GetEmployeesNames()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
+                {
+                    string Query = @"SELECT
+    0 AS EmployeeID,
+    'None' AS FullName
+
+UNION ALL
+
+SELECT
+    EmployeeID,
+    FullName
+FROM Employees
+ORDER BY EmployeeID ;";
+
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+                    }
+
+
+                }
+
+
+            }
+            catch (Exception ex) { }
+         ;
+            return dt;
+        }
 
         public static int DeleteEmployee(int ID)
         {

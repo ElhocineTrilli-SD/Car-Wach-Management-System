@@ -16,7 +16,12 @@ namespace Business_Layer
 
             return clsCustomerData.GetAllCustomers();
         }
+        public static DataTable GetCustomersNames()
+        {
+            //call DataAccess;
 
+            return clsCustomerData.GetCustomersNames();
+        }
         public static int GetCustomersCount()
         {
             return clsCustomerData.TotalCustomers();

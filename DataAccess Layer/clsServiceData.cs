@@ -95,7 +95,6 @@ namespace DataAccess_Layer
 
         }
 
-
         public static int AddNewService(string ServiceName,string ServicePrice)
         {
             int ServiceID = 0;
@@ -149,6 +148,71 @@ namespace DataAccess_Layer
 
         }
 
+        public static DataTable GetServicesNames()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
+                {
+                    string Query = @"SELECT
+    0 AS ServiceID,
+    'None' AS ServiceName
 
+UNION ALL
+
+SELECT
+    ServiceID,
+    ServiceName
+FROM Services
+ORDER BY ServiceID ;";
+
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+                    }
+
+
+                }
+
+
+            }
+            catch (Exception ex) { }
+         ;
+            return dt;
+        }
+
+        public static decimal GetServicePrice(int ServiceID)
+        {
+            Decimal Price = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
+                {
+                    connection.Open();
+                    string Query = @"select price from services where serviceID = @serviceID;
+                                     ";
+
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue("@serviceID", ServiceID);
+                        object result = command.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            Price = Convert.ToDecimal(result);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { }
+            return Price;
+
+        }
     }
 }

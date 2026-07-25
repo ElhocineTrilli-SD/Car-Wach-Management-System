@@ -63,6 +63,44 @@ namespace DataAccess_Layer
             return dt;
         }
 
+        public static DataTable GetCustomersNames()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
+                {
+                    string Query = @"SELECT
+    0 AS CustomerID,
+    'None' AS FullName
+
+UNION ALL
+
+SELECT
+    CustomerID,
+    FullName
+FROM Customers
+ORDER BY CustomerID;";
+
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+                    }
+
+
+                }
+
+
+            }
+            catch (Exception ex) { }
+          ;
+            return dt;
+        }
+
 
         public static int UpdateCustomer(int CustomerID, string FullName, string Phone,
              string CarPlateNumber, string CarBrand, string CarModel, string CarColor)
