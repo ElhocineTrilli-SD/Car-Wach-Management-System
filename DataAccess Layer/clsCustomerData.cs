@@ -10,6 +10,47 @@ namespace DataAccess_Layer
 {
     public class clsCustomerData
     {
+        public static bool GetCustomerInfoByID(int CustomerID,ref string FullName,ref string Phone,
+            ref string CarPlateNumber,ref string CarBrand,ref string CarModel,ref string CarColor)
+        {
+            bool IsFound = false;
+            using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
+            {
+                string Query = "select * from customers where CustomerID = @CustomerID";
+
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@CustomerID", CustomerID);
+                    try
+                    {
+                        connection.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            IsFound = true;
+                            FullName = (string)reader["FullName"];
+                            Phone = (string)reader["Phone"];
+                            CarPlateNumber = (string)reader["CarPlateNumber"];
+                            CarBrand = (string)reader["CarBrand"];
+                            CarModel = (string)reader["CarModel"];
+                            CarColor = (string)reader["CarColor"];
+                        }
+                        else
+                        {
+                            IsFound = false;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                         clsEventLog.LogException("GetCustomerInfoByID", ex);
+                        IsFound = false;
+                    }
+                }
+            }
+            return IsFound;
+        }
+
 
         public static int TotalCustomers()
         {
@@ -102,7 +143,7 @@ ORDER BY CustomerID;";
         }
 
 
-        public static int UpdateCustomer(int CustomerID, string FullName, string Phone,
+        public static bool UpdateCustomer(int CustomerID, string FullName, string Phone,
              string CarPlateNumber, string CarBrand, string CarModel, string CarColor)
         {
     
@@ -138,7 +179,7 @@ ORDER BY CustomerID;";
                 }
             }
             catch (Exception ex) { }
-            return RowAffected;
+            return RowAffected > 0;
 
         }
 
@@ -173,7 +214,7 @@ ORDER BY CustomerID;";
             return CustomerID;
         }
 
-        public static int DeleteCustomer(int ID)
+        public static bool DeleteCustomer(int ID)
         {
             int RowAffected = 0;
             try
@@ -193,7 +234,7 @@ ORDER BY CustomerID;";
                 }
             }
             catch (Exception ex) { }
-            return RowAffected;
+            return RowAffected > 0;
 
         }
 

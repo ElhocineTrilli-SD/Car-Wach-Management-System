@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -45,6 +46,7 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtCarModel = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCarColor = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -238,7 +240,7 @@
             this.guna2Button3.Size = new System.Drawing.Size(175, 55);
             this.guna2Button3.TabIndex = 84;
             this.guna2Button3.Text = "Add Customer";
-            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            this.guna2Button3.Click += new System.EventHandler(this.AddCustomer_Click);
             // 
             // guna2Button2
             // 
@@ -256,7 +258,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(175, 55);
             this.guna2Button2.TabIndex = 83;
             this.guna2Button2.Text = "Delete";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.guna2Button2.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // guna2Button1
             // 
@@ -316,6 +318,11 @@
             this.txtCarColor.Size = new System.Drawing.Size(239, 49);
             this.txtCarColor.TabIndex = 86;
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 15;
+            this.guna2Elipse1.TargetControl = this;
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,5 +364,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2TextBox txtCarModel;
         private Guna.UI2.WinForms.Guna2TextBox txtCarColor;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

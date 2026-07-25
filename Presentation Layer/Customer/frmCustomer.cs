@@ -14,6 +14,8 @@ namespace Presentation_Layer.Customer
     public partial class frmCustomer : Form
     {
         public DataTable _dtCustomers;
+        public int CustomerID ;
+        public clsCustomer _Customer;
         public frmCustomer()
         {
             InitializeComponent();
@@ -27,7 +29,6 @@ namespace Presentation_Layer.Customer
         {
             RefrechEmployeeList();
         }
-
         private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -42,18 +43,16 @@ namespace Presentation_Layer.Customer
                 txtCarColor.Text = row.Cells[6].Value.ToString();
             }
         }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
             int CustomerID = (int)dgvCustomer.CurrentRow.Cells[0].Value;
-            string FullName = txtFullName.Text;
-            string Phone = txtPhone.Text;
-            string CarPlateNumber = txtCarPlateNumber.Text;
-            string CarBrand = txtCarBrand.Text;
-            string CarModel = txtCarModel.Text;
-            string CarColor = txtCarColor.Text;
-
-
+            _Customer = clsCustomer.Find(CustomerID);
+            _Customer.FullName    = txtFullName.Text;
+            _Customer.Phone       = txtPhone.Text;
+            _Customer.CarPlateNumber = txtCarPlateNumber.Text;
+            _Customer.CarBrand       = txtCarBrand.Text;
+            _Customer.CarModel       = txtCarModel.Text;
+            _Customer.CarColor       = txtCarColor.Text;
             DialogResult result = MessageBox.Show(
                            "Are you sure you want to update Customer Info?",
                            "Confirm Update",
@@ -64,7 +63,8 @@ namespace Presentation_Layer.Customer
             if (result == DialogResult.Yes)
             {
                 // Update Code : 
-                if (clsCustomer.UpdateEmployee(CustomerID, FullName, Phone, CarPlateNumber, CarBrand, CarModel, CarColor))
+                if (_Customer.Save())
+                    
                 {
                     MessageBox.Show(
                                     "The customer with ID " + CustomerID + " was updated successfully.",
@@ -85,8 +85,7 @@ namespace Presentation_Layer.Customer
                 }
             }
         }
-
-        private void guna2Button3_Click(object sender, EventArgs e)
+        private void AddCustomer_Click(object sender, EventArgs e)
         {
             if (txtFullName.Text == "" || txtPhone.Text == "" || txtCarPlateNumber.Text == ""
                 || txtCarModel.Text == "" || txtCarColor.Text == "" || txtCarBrand.Text == "")
@@ -96,15 +95,15 @@ namespace Presentation_Layer.Customer
             else
             {
 
-                int CustomerID = (int)dgvCustomer.CurrentRow.Cells[0].Value;
-                string FullName = txtFullName.Text;
-                string Phone = txtPhone.Text;
-                string CarPlateNumber = txtCarPlateNumber.Text;
-                string CarBrand = txtCarBrand.Text;
-                string CarModel = txtCarModel.Text;
-                string CarColor = txtCarColor.Text;
+             //   int CustomerID        = (int)dgvCustomer.CurrentRow.Cells[0].Value;
+                _Customer.FullName       = txtFullName.Text;
+                _Customer.Phone          = txtPhone.Text;
+                _Customer.CarPlateNumber = txtCarPlateNumber.Text;
+                _Customer.CarBrand       = txtCarBrand.Text;
+                _Customer.CarModel       = txtCarModel.Text;
+                _Customer.CarColor       = txtCarColor.Text;
 
-                if (clsCustomer.AddNewCustomer(FullName, Phone, CarPlateNumber, CarBrand, CarModel, CarColor))
+                if (_Customer.Save())
                 {
                     MessageBox.Show("The new Customer has been added successfully.", "Success",
                     MessageBoxButtons.OK,
@@ -119,8 +118,7 @@ namespace Presentation_Layer.Customer
                 }
             }
         }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             int ID = (int)dgvCustomer.CurrentRow.Cells[0].Value;
             DialogResult result = MessageBox.Show(
