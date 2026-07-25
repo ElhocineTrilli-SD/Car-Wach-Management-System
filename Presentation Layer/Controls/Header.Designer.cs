@@ -50,7 +50,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(363, 31);
             this.label1.TabIndex = 55;
-            this.label1.Text = "Car Wach Management System";
+            this.label1.Text = "Car Wash Management System";
             // 
             // btnclose
             // 

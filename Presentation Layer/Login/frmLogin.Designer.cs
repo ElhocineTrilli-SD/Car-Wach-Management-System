@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.cbRememberMe = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnclose = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.cbRememberMe = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2CustomGradientPanel2.SuspendLayout();
@@ -88,9 +88,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(3, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(332, 72);
+            this.label1.Size = new System.Drawing.Size(329, 72);
             this.label1.TabIndex = 52;
-            this.label1.Text = "CAR WACH";
+            this.label1.Text = "CAR WASH";
             // 
             // pictureBox1
             // 
@@ -125,6 +125,25 @@
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(392, 463);
             this.guna2CustomGradientPanel2.TabIndex = 51;
             this.guna2CustomGradientPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel2_Paint);
+            // 
+            // cbRememberMe
+            // 
+            this.cbRememberMe.AutoSize = true;
+            this.cbRememberMe.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbRememberMe.CheckedState.BorderRadius = 0;
+            this.cbRememberMe.CheckedState.BorderThickness = 0;
+            this.cbRememberMe.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbRememberMe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRememberMe.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cbRememberMe.Location = new System.Drawing.Point(44, 335);
+            this.cbRememberMe.Name = "cbRememberMe";
+            this.cbRememberMe.Size = new System.Drawing.Size(116, 21);
+            this.cbRememberMe.TabIndex = 52;
+            this.cbRememberMe.Text = "Remember Me";
+            this.cbRememberMe.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cbRememberMe.UncheckedState.BorderRadius = 0;
+            this.cbRememberMe.UncheckedState.BorderThickness = 0;
+            this.cbRememberMe.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // guna2Button1
             // 
@@ -171,7 +190,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(242, 30);
             this.label2.TabIndex = 44;
-            this.label2.Text = "Car Wach System v2.0";
+            this.label2.Text = "Car Wash System v2.0";
             // 
             // txtUserName
             // 
@@ -188,6 +207,7 @@
             this.txtUserName.Location = new System.Drawing.Point(38, 200);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserName.Name = "txtUserName";
+            this.txtUserName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtUserName.PlaceholderText = "User Name";
             this.txtUserName.SelectedText = "";
             this.txtUserName.Size = new System.Drawing.Size(309, 49);
@@ -220,6 +240,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
+            this.txtPassword.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(309, 49);
@@ -256,25 +277,6 @@
             // 
             this.guna2Elipse2.BorderRadius = 10;
             this.guna2Elipse2.TargetControl = this;
-            // 
-            // cbRememberMe
-            // 
-            this.cbRememberMe.AutoSize = true;
-            this.cbRememberMe.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbRememberMe.CheckedState.BorderRadius = 0;
-            this.cbRememberMe.CheckedState.BorderThickness = 0;
-            this.cbRememberMe.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbRememberMe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRememberMe.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.cbRememberMe.Location = new System.Drawing.Point(44, 335);
-            this.cbRememberMe.Name = "cbRememberMe";
-            this.cbRememberMe.Size = new System.Drawing.Size(116, 21);
-            this.cbRememberMe.TabIndex = 52;
-            this.cbRememberMe.Text = "Remember Me";
-            this.cbRememberMe.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cbRememberMe.UncheckedState.BorderRadius = 0;
-            this.cbRememberMe.UncheckedState.BorderThickness = 0;
-            this.cbRememberMe.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // frmLogin
             // 
