@@ -16,10 +16,13 @@ namespace Presentation_Layer.Employee
     {
         DataTable _dtEmployees;
 
+        public clsEmployee _EmployeeInfo;
+       
+
         public frmEmployee()
         {
             InitializeComponent();
-
+         _EmployeeInfo = new clsEmployee();
         }
 
         public void RefrechEmployeeList()
@@ -56,13 +59,14 @@ namespace Presentation_Layer.Employee
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             int ID = (int)dgvEmployees.CurrentRow.Cells[0].Value;
-            string FullName = txtEmployeeFullName.Text;
-            string Phone = txtPhone.Text;
-            string Role = txtRole.Text;
-            string salary = txtSalary.Text;
-            DateTime Hiredate = dtpHireDate.Value.Date ;
-            bool IsActive = cbIsActive.SelectedIndex == 0;
-            
+            _EmployeeInfo = clsEmployee.Find(ID);
+            _EmployeeInfo.FullName = txtEmployeeFullName.Text;
+            _EmployeeInfo.Phone = txtPhone.Text;
+            _EmployeeInfo.Role = txtRole.Text;
+            _EmployeeInfo.SalaryPerMonth = Convert.ToDecimal(txtSalary.Text);
+            _EmployeeInfo.date = dtpHireDate.Value;
+            _EmployeeInfo.IsActive = cbIsActive.SelectedIndex == 0;
+
 
             DialogResult result = MessageBox.Show(
                            "Are you sure you want to update employee Info?",
@@ -74,7 +78,7 @@ namespace Presentation_Layer.Employee
             if (result == DialogResult.Yes)
             {
                 // Update Code : 
-                if (clsEmployee.UpdateEmployee(ID, FullName, Phone, Role, salary, Hiredate, IsActive))
+                if (_EmployeeInfo.Save())
                 {
                     MessageBox.Show(
                                     "The employee with ID " + ID + " was updated successfully.",
@@ -103,20 +107,21 @@ namespace Presentation_Layer.Employee
 
         private void addemployee_Click(object sender, EventArgs e)
         {
-            if (txtEmployeeFullName.Text == "" || txtPhone.Text == "" || txtRole.Text == "" || txtSalary.Text == "")
+            if (txtEmployeeFullName.Text == "" || txtPhone.Text == "" || txtRole.Text == ""
+                || txtSalary.Text == "")
             {
                 MessageBox.Show("Missing Data !!!");
             }
             else
             {
-                string FullName = txtEmployeeFullName.Text;
-                bool IsActive = cbIsActive.SelectedIndex == 0;
-                string Phone = txtPhone.Text;
-                string role = txtRole.Text;
-                string Salary = txtSalary.Text;
-                DateTime HireDate = dtpHireDate.Value.Date;
+                _EmployeeInfo.FullName = txtEmployeeFullName.Text;
+                _EmployeeInfo.Phone = txtPhone.Text;
+                _EmployeeInfo.Role = txtRole.Text;
+                _EmployeeInfo.SalaryPerMonth =Convert.ToDecimal( txtSalary.Text);
+                _EmployeeInfo.date = dtpHireDate.Value;
+                _EmployeeInfo.IsActive = cbIsActive.SelectedIndex == 0 ;
 
-                if (clsEmployee.AddNewEmployee(FullName,Phone,role,Salary,HireDate,IsActive))
+                if (_EmployeeInfo.Save())
                 {
                     MessageBox.Show("The new employee has been added successfully.", "Success",
                     MessageBoxButtons.OK,

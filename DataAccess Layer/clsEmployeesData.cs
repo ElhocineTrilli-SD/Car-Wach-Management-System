@@ -12,6 +12,45 @@ namespace DataAccess_Layer
     public class clsEmployeesData
     {
 
+        public static bool GetEmployeeInfoByID(int ID, ref string FullName, ref string Phone,
+           ref string Role, ref decimal SalaryPerMonth, ref DateTime Hiredate, ref bool IsActive)
+        {
+            bool IsFound = false;
+            using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
+            {
+                string Query = "select * from Employees where EmployeeID = @EmployeeID";
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@EmployeeID", ID);
+                    try
+                    {
+                        connection.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            IsFound = true;
+                            FullName = (string)reader["FullName"];
+                            Phone = (string)reader["Phone"];
+                            Role = (string)reader["Role"];
+                            SalaryPerMonth = (decimal)reader["SalaryPerMonth"];
+                            Hiredate = (DateTime)reader["Hiredate"];
+                            IsActive = (bool)reader["IsActive"];
+                        }
+                        else
+                        {
+                            IsFound = false;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        clsEventLog.LogException("GetEmployeeInfoByID", ex);
+                        IsFound = false;
+                    }
+                }
+            }
+            return IsFound;
+        }
+
         public static int TotalEmployee()
         {
             try
@@ -35,7 +74,7 @@ namespace DataAccess_Layer
         }
 
         public static int AddNewEmployee( string FullName, string Phone,
-            string Role, string salary, DateTime Hiredate, bool IsActive)
+            string Role, decimal salary, DateTime Hiredate, bool IsActive)
         {
             int EmpID = 0;
             try
@@ -129,7 +168,7 @@ ORDER BY EmployeeID ;";
             return dt;
         }
 
-        public static int DeleteEmployee(int ID)
+        public static bool DeleteEmployee(int ID)
         {
             int RowAffected = 0;
             try
@@ -149,12 +188,12 @@ ORDER BY EmployeeID ;";
                 }
             }
             catch (Exception ex) { }
-            return RowAffected;
+            return RowAffected > 0;
 
         }
 
-        public static int UpdateEmployee(int ID, string FullName, string Phone,
-            string Role, string salary, DateTime Hiredate, bool IsActive)
+        public static bool UpdateEmployee(int ID, string FullName, string Phone,
+            string Role, decimal salary, DateTime Hiredate, bool IsActive)
         {
             int RowAffected = 0;
             try
@@ -188,7 +227,7 @@ ORDER BY EmployeeID ;";
                 }
             }
             catch (Exception ex) { }
-            return RowAffected;
+            return RowAffected >0;
 
         }
 

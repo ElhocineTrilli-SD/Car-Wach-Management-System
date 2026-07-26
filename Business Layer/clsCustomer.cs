@@ -21,7 +21,7 @@ namespace Business_Layer
         public string CarModel { get; set; }
         public string CarColor { get; set; }
 
-        clsCustomer()
+        public clsCustomer()
         {
             Mode = enMode.AddNew;
             this.CustomerID = 0;
@@ -32,7 +32,7 @@ namespace Business_Layer
             this.CarModel = "";
             this.CarColor = "";
         }
-        clsCustomer(int CustomerID, string FullName, string Phone,
+        public clsCustomer(int CustomerID, string FullName, string Phone,
              string CarPlateNumber, string CarBrand, string CarModel, string CarColor)
         {
             this.CustomerID=CustomerID;
@@ -44,8 +44,6 @@ namespace Business_Layer
             this.CarColor=CarColor;
             Mode = enMode.Update;
         }
-
-
         public static clsCustomer Find(int ID)
         {
             string FullName = "", Phone = "",
@@ -65,9 +63,6 @@ namespace Business_Layer
             else return null;
 
         }
-
-
-
         public static DataTable GetAllCustomers()
         {
             //call DataAccess;
@@ -84,13 +79,11 @@ namespace Business_Layer
         {
             return clsCustomerData.TotalCustomers();
         }
-
         public  bool _UpdateCustomer() 
         {
             return clsCustomerData.UpdateCustomer(this.CustomerID,this.FullName,this.Phone,this.CarPlateNumber
                 ,this.CarBrand,this.CarModel,this.CarColor);
         }
-
         private  bool _AddNewCustomer()
         {
             this.CustomerID = clsCustomerData.AddNewCustomer(this.FullName,this.Phone,
@@ -102,7 +95,6 @@ namespace Business_Layer
         {
             return clsCustomerData.DeleteCustomer(ID) ;
         }
-
         public bool Save()
         {
 

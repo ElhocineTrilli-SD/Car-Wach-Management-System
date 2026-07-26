@@ -222,8 +222,8 @@ ORDER BY CustomerID;";
                 using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
                 {
                     connection.Open();
-                    string Query = @"Delete from Customers where CustomerID = @ID
-                                     ";
+                    string Query = @"Delete from Customers where CustomerID = @ID;";
+                                     
 
 
                     using (SqlCommand command = new SqlCommand(Query, connection))
@@ -233,7 +233,10 @@ ORDER BY CustomerID;";
                     }
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                clsEventLog.LogException("DeleteCustomer", ex);
+            }
             return RowAffected > 0;
 
         }
