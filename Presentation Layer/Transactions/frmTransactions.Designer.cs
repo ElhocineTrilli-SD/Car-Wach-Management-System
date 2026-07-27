@@ -49,7 +49,10 @@
             this.txtAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPaymentMethod = new Guna.UI2.WinForms.Guna2TextBox();
             this.TDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
+            this.guna2ContextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -61,13 +64,13 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(278, 14);
+            this.label2.Location = new System.Drawing.Point(288, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 25);
+            this.label2.Size = new System.Drawing.Size(170, 15);
             this.label2.TabIndex = 77;
-            this.label2.Text = "/ Add Billing";
+            this.label2.Text = "/ Create a New Transaction";
             // 
             // label4
             // 
@@ -90,10 +93,9 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OldLace;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvTransactions.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Bold);
@@ -104,6 +106,7 @@
             this.dgvTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTransactions.ColumnHeadersHeight = 29;
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvTransactions.ContextMenuStrip = this.guna2ContextMenuStrip1;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -155,9 +158,9 @@
             // 
             this.guna2CustomGradientPanel1.BorderRadius = 15;
             this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.DodgerBlue;
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(12, 219);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(-3, 219);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1010, 10);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1037, 10);
             this.guna2CustomGradientPanel1.TabIndex = 92;
             // 
             // guna2Button3
@@ -171,9 +174,9 @@
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
             this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.Location = new System.Drawing.Point(685, 123);
+            this.guna2Button3.Location = new System.Drawing.Point(726, 68);
             this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(175, 42);
+            this.guna2Button3.Size = new System.Drawing.Size(175, 91);
             this.guna2Button3.TabIndex = 93;
             this.guna2Button3.Text = "Add Billing";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
@@ -193,7 +196,7 @@
             this.cbCustomer.ItemHeight = 30;
             this.cbCustomer.Items.AddRange(new object[] {
             "None"});
-            this.cbCustomer.Location = new System.Drawing.Point(182, 68);
+            this.cbCustomer.Location = new System.Drawing.Point(243, 68);
             this.cbCustomer.Name = "cbCustomer";
             this.cbCustomer.Size = new System.Drawing.Size(186, 36);
             this.cbCustomer.StartIndex = 0;
@@ -205,7 +208,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(34, 74);
+            this.label1.Location = new System.Drawing.Point(95, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 23);
             this.label1.TabIndex = 96;
@@ -217,7 +220,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(34, 129);
+            this.label3.Location = new System.Drawing.Point(95, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 23);
             this.label3.TabIndex = 98;
@@ -239,7 +242,7 @@
             this.cbEmployee.ItemHeight = 30;
             this.cbEmployee.Items.AddRange(new object[] {
             "None"});
-            this.cbEmployee.Location = new System.Drawing.Point(182, 123);
+            this.cbEmployee.Location = new System.Drawing.Point(243, 123);
             this.cbEmployee.Name = "cbEmployee";
             this.cbEmployee.Size = new System.Drawing.Size(186, 36);
             this.cbEmployee.StartIndex = 0;
@@ -251,7 +254,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(34, 182);
+            this.label5.Location = new System.Drawing.Point(95, 182);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(132, 23);
             this.label5.TabIndex = 100;
@@ -272,7 +275,7 @@
             this.cbService.ItemHeight = 30;
             this.cbService.Items.AddRange(new object[] {
             "None"});
-            this.cbService.Location = new System.Drawing.Point(182, 176);
+            this.cbService.Location = new System.Drawing.Point(243, 176);
             this.cbService.Name = "cbService";
             this.cbService.Size = new System.Drawing.Size(186, 36);
             this.cbService.StartIndex = 0;
@@ -292,7 +295,8 @@
             this.txtAmount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAmount.Location = new System.Drawing.Point(403, 176);
+            this.txtAmount.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtAmount.IconLeft")));
+            this.txtAmount.Location = new System.Drawing.Point(464, 176);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.PlaceholderText = "AmountPaid";
@@ -312,7 +316,8 @@
             this.txtPaymentMethod.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPaymentMethod.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPaymentMethod.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPaymentMethod.Location = new System.Drawing.Point(403, 68);
+            this.txtPaymentMethod.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtPaymentMethod.IconLeft")));
+            this.txtPaymentMethod.Location = new System.Drawing.Point(464, 68);
             this.txtPaymentMethod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPaymentMethod.Name = "txtPaymentMethod";
             this.txtPaymentMethod.PlaceholderText = "Payment method";
@@ -324,15 +329,41 @@
             // 
             this.TDate.BorderRadius = 10;
             this.TDate.Checked = true;
+            this.TDate.FillColor = System.Drawing.Color.DodgerBlue;
             this.TDate.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.TDate.Location = new System.Drawing.Point(408, 123);
+            this.TDate.Location = new System.Drawing.Point(464, 123);
             this.TDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.TDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.TDate.Name = "TDate";
-            this.TDate.Size = new System.Drawing.Size(234, 36);
+            this.TDate.Size = new System.Drawing.Size(239, 36);
             this.TDate.TabIndex = 103;
             this.TDate.Value = new System.DateTime(2026, 7, 24, 22, 50, 22, 976);
+            // 
+            // guna2ContextMenuStrip1
+            // 
+            this.guna2ContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.guna2ContextMenuStrip1.Name = "guna2ContextMenuStrip1";
+            this.guna2ContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.guna2ContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2ContextMenuStrip1.RenderStyle.ColorTable = null;
+            this.guna2ContextMenuStrip1.RenderStyle.RoundedEdges = true;
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(126, 28);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deleteToolStripMenuItem.Image")));
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
+            this.deleteToolStripMenuItem.Text = "Delete ";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // frmTransactions
             // 
@@ -358,6 +389,7 @@
             this.Text = "frmTransactions";
             this.Load += new System.EventHandler(this.frmTransactions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
+            this.guna2ContextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,5 +412,7 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker TDate;
         private Guna.UI2.WinForms.Guna2TextBox txtPaymentMethod;
         private Guna.UI2.WinForms.Guna2TextBox txtAmount;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

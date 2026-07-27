@@ -88,7 +88,7 @@ namespace Presentation_Layer.Transactions
             {
                 int CustomerID = Convert.ToInt32(cbCustomer.SelectedValue);
                 int EmployeeID = Convert.ToInt32(cbEmployee.SelectedValue);
-                int ServiceID  = Convert.ToInt32(cbService.SelectedValue);
+                int ServiceID = Convert.ToInt32(cbService.SelectedValue);
                 DateTime TransactinsDate = TDate.Value;
                 Decimal AmountPaid = Convert.ToDecimal(txtAmount.Text);
                 string PaymentMethod = txtPaymentMethod.Text;
@@ -107,6 +107,43 @@ namespace Presentation_Layer.Transactions
                     MessageBox.Show("Failed to add the new payment.", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+            }
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int ID = (int)dgvTransactions.CurrentRow.Cells[0].Value;
+            DialogResult result = MessageBox.Show(
+                             "Are you sure you want to delete this service?",
+                             "Confirm Delete",
+                             MessageBoxButtons.YesNo,
+                             MessageBoxIcon.Warning
+                             );
+
+            if (result == DialogResult.Yes)
+            {
+                // delete Code : 
+                if (clsTransactions.DeleteTransaction(ID))
+                {
+                    MessageBox.Show(
+                                    "The service with ID " + ID + " was deleted successfully.",
+                                    "Delete Successful",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information
+                                   );
+                    frmTransactions_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show(
+                                    "Failed to delete the service with ID " + ID + ". Please try again.",
+                                    "Delete Failed",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error
+                                   );
+                }
+
 
             }
         }

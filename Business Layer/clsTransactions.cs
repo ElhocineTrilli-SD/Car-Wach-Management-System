@@ -29,14 +29,16 @@ namespace Business_Layer
         }
 
         clsTransactions(int TransactionID , int CustomerID,
-            int EmployeeID,int serviceID,DateTime TransactionsDate,decimal AmountPaid
+            int EmployeeID,int ServiceID,DateTime TransactionsDate,decimal AmountPaid
             , string PaymentMethod)
         {
             this.TransactionsID = TransactionID;
             this.CustomerID = CustomerID;
             CustomerInfo = clsCustomer.Find(CustomerID);
             this.EmployeeID = EmployeeID;
-            this.ServiceID= serviceID;
+            EmployeeInfo = clsEmployee.Find(EmployeeID);
+            this.ServiceID= ServiceID;
+            ServiceInfo = clsService.Find(ServiceID);
             this.TransactionsDate = TransactionsDate;
             this.AmountPaid =AmountPaid;
             this.PaymentMethod= PaymentMethod;
@@ -88,6 +90,12 @@ namespace Business_Layer
         {
             return clsTransactionsData.TotalTransactions();
         }
+
+        public static bool DeleteTransaction(int TransactionID)
+        {
+            return clsTransactionsData.DeleteTransaction(TransactionID);
+        }
+
 
     }
 }
