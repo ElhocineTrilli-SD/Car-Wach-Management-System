@@ -91,6 +91,29 @@ FROM Transactions;";
             return totalRevenue; 
         }
         //
+        public static bool DeleteTransaction(int ID)
+        {
+            int RowAffected = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
+                {
+                    connection.Open();
+                    string Query = @"Delete from Transactions where TransactionID = @TransactionID
+                                     ";
+
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue("@TransactionID", ID);
+                        RowAffected = command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex) { }
+            return RowAffected > 0;
+
+        }
 
         public static DataTable GetAllTransactions()
         {
