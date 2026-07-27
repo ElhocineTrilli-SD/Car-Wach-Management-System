@@ -144,7 +144,7 @@ namespace Presentation_Layer.Customer
                 else
                 {
                     MessageBox.Show(
-                                    "Failed to delete the customer with ID " + ID + ". Please try again.",
+                                    "This customer cannot be deleted because it is linked to existing transactions.",
                                     "Delete Failed",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error

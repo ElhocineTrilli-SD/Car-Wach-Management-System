@@ -164,7 +164,7 @@ namespace Presentation_Layer.Employee
                 else
                 {
                     MessageBox.Show(
-                                    "Failed to delete the employee with ID " + EmpID + ". Please try again.",
+                                    "This employee cannot be deleted because it is linked to existing transactions.",
                                     "Delete Failed",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error
