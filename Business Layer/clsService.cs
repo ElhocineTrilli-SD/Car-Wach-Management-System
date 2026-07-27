@@ -10,6 +10,49 @@ namespace Business_Layer
 {
     public class clsService
     {
+        public enum enMode { AddNew = 0, Update = 1 };
+        enMode Mode;
+
+        public int ServiceID { get; set; }
+
+        public string ServiceName { get; set; }
+
+        public decimal Price { get; set; }
+
+        public clsService()
+        {
+            Mode = enMode.AddNew;
+            this.ServiceID = 0;
+            this.ServiceName = "";
+            this.Price = 0;
+        }
+
+        public clsService(int ServiceID, string ServiceName, decimal Price)
+        {
+            Mode = enMode.Update;
+            this.ServiceID = ServiceID;
+            this.ServiceName = ServiceName;
+            this.Price = Price;
+        }
+
+        public static clsService Find(int ID)
+        {
+
+            string ServiceName = "";
+            decimal Price = 0;
+
+            bool IsFound = clsServiceData.GetServiceInfoByID
+                (
+                  ID, ref ServiceName, ref Price 
+                );
+
+            if (IsFound)
+                return new clsService(ID, ServiceName, Price);
+
+            else return null;
+
+        }
+
         public static DataTable GetAllServices()
         {
             //call DataAccess;
@@ -32,21 +75,39 @@ namespace Business_Layer
             return clsServiceData.TotalServices();
         }
 
-        public static bool UpdateService(int ID, string ServiceName, string ServicePrice)
+        public bool _UpdateService()
         {
-            return clsServiceData.UpdateService(ID,ServiceName,ServicePrice) > 0;
+            return clsServiceData.UpdateService(this.ServiceID, this.ServiceName, this.Price);
         }
 
-        public static bool AddNewService(string ServiceName, string ServicePrice)
+        public bool _AddNewService()
         {
+            this.ServiceID = clsServiceData.AddNewService(this.ServiceName, this.Price);
 
-            return clsServiceData.AddNewService(ServiceName,ServicePrice) > 0;
+            return (this.ServiceID > 0);
         }
 
         public static bool DeleteService(int ServiceID)
         {
-            return clsServiceData.DeleteService(ServiceID) > 0;
+            return clsServiceData.DeleteService(ServiceID);
         }
 
+        public bool Save()
+        {
+            switch (Mode)
+            {
+                case enMode.AddNew:
+                    if (_AddNewService())
+                    {
+
+                        Mode = enMode.Update;
+                        return true;
+                    }
+                    else { return false; }
+                case enMode.Update:
+                    return (_UpdateService());
+            }
+            return false;
+        }
     }
 }

@@ -10,6 +10,41 @@ namespace DataAccess_Layer
 {
     public class clsServiceData
     {
+        public static bool GetServiceInfoByID(int ID, ref string ServiceName, ref decimal Price)
+        {
+            bool IsFound = false;
+            using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
+            {
+                string Query = "select * from Services where ServiceID = @ServiceID";
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@ServiceID", ID);
+                    try
+                    {
+                        connection.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            IsFound = true;
+                            ServiceName = (string)reader["ServiceName"];
+                            Price = (decimal)reader["Price"];
+                        }
+                        else
+                        {
+                            IsFound = false;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        clsEventLog.LogException("GetServiceInfoByID", ex);
+                        IsFound = false;
+                    }
+                }
+            }
+            return IsFound;
+        }
+
+
         public static int TotalServices()
         {
             try
@@ -62,7 +97,7 @@ namespace DataAccess_Layer
             return dt;
         }
 
-        public static int UpdateService(int ServiceID, string ServiceName, string ServicePrice)
+        public static bool UpdateService(int ServiceID, string ServiceName, decimal ServicePrice)
         {
 
             int RowAffected = 0;
@@ -91,11 +126,11 @@ namespace DataAccess_Layer
                 }
             }
             catch (Exception ex) { }
-            return RowAffected;
+            return RowAffected > 0;
 
         }
 
-        public static int AddNewService(string ServiceName,string ServicePrice)
+        public static int AddNewService(string ServiceName,decimal ServicePrice)
         {
             int ServiceID = 0;
             try
@@ -124,7 +159,7 @@ namespace DataAccess_Layer
             return ServiceID;
         }
 
-        public static int DeleteService(int ID)
+        public static bool DeleteService(int ID)
         {
             int RowAffected = 0;
             try
@@ -144,7 +179,7 @@ namespace DataAccess_Layer
                 }
             }
             catch (Exception ex) { }
-            return RowAffected;
+            return RowAffected > 0;
 
         }
 

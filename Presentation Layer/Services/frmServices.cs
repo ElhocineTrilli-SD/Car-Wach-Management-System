@@ -14,6 +14,9 @@ namespace Presentation_Layer.Services
     public partial class frmServices : Form
     {
         private DataTable _dtServices;
+
+        public clsService clsServiceInfo = new clsService();
+        public int _ServiceID;
         public frmServices()
         {
             InitializeComponent();
@@ -37,12 +40,12 @@ namespace Presentation_Layer.Services
             else
             {
 
-                int CustomerID = (int)dgvServices.CurrentRow.Cells[0].Value;
-                string ServiceName = txtSName.Text;
-                string ServicePrice = txtSPrice.Text;
+                //int CustomerID = (int)dgvServices.CurrentRow.Cells[0].Value;
+                clsServiceInfo.ServiceName = txtSName.Text;
+                clsServiceInfo.Price = Convert.ToDecimal( txtSPrice.Text);
 
 
-                if (clsService.AddNewService(ServiceName, ServicePrice))
+                if (clsServiceInfo.Save())
                 {
                     MessageBox.Show("The new Service has been added successfully.", "Success",
                     MessageBoxButtons.OK,
@@ -95,12 +98,10 @@ namespace Presentation_Layer.Services
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
-            int ServiceID = (int)dgvServices.CurrentRow.Cells[0].Value;
-            string ServiceName = txtSName.Text;
-            string ServicePrice = txtSPrice.Text;
-
-
+            _ServiceID = (int)dgvServices.CurrentRow.Cells[0].Value;
+            clsServiceInfo = clsService.Find(_ServiceID);
+            clsServiceInfo.ServiceName = txtSName.Text;
+            clsServiceInfo.Price = Convert.ToDecimal( txtSPrice.Text);
 
             DialogResult result = MessageBox.Show(
                            "Are you sure you want to update service Info?",
@@ -112,10 +113,10 @@ namespace Presentation_Layer.Services
             if (result == DialogResult.Yes)
             {
                 // Update Code : 
-                if (clsService.UpdateService(ServiceID,ServiceName,ServicePrice))
+                if (clsServiceInfo.Save())
                 { 
                     MessageBox.Show(
-                                    "The service with ID " + ServiceID + " was updated successfully.",
+                                    "The service with ID " + _ServiceID + " was updated successfully.",
                                     "Update Successful",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Information
