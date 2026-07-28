@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
@@ -40,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pnlContainer = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.header1 = new Presentation_Layer.Controls.Header();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -202,7 +204,7 @@
             this.pnlContainer.BorderRadius = 15;
             this.pnlContainer.Location = new System.Drawing.Point(203, 75);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(1050, 608);
+            this.pnlContainer.Size = new System.Drawing.Size(1061, 608);
             this.pnlContainer.TabIndex = 50;
             // 
             // header1
@@ -211,6 +213,11 @@
             this.header1.Name = "header1";
             this.header1.Size = new System.Drawing.Size(1059, 54);
             this.header1.TabIndex = 51;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this;
             // 
             // frmDashboard
             // 
@@ -246,5 +253,6 @@
         private Guna.UI2.WinForms.Guna2Button btnEmployee;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlContainer;
         private Controls.Header header1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }
