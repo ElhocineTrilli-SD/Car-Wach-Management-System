@@ -46,8 +46,6 @@ namespace Business_Layer
             Mode = enMode.Update;
 
         }
-
-
         public static clsEmployee Find(int ID)
         {
             string FullName = "", Phone = "", Role = "";
@@ -64,7 +62,6 @@ namespace Business_Layer
                 return new clsEmployee(ID, FullName, Phone, Role, SalaryPerMonth, Hiredate, IsActive);
             else return null;
         }
-
         public static DataTable GetAllEmployee()
         {
             //call DataAccess;

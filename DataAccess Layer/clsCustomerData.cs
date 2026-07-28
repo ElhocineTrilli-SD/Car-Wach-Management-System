@@ -50,8 +50,6 @@ namespace DataAccess_Layer
             }
             return IsFound;
         }
-
-
         public static int TotalCustomers()
         {
             try
@@ -73,9 +71,6 @@ namespace DataAccess_Layer
             }
 
         }
-        //
-      
-
         public static DataTable GetAllCustomers()
         {
             DataTable dt = new DataTable();
@@ -103,7 +98,6 @@ namespace DataAccess_Layer
             ;
             return dt;
         }
-
         public static DataTable GetCustomersNames()
         {
             DataTable dt = new DataTable();
@@ -141,8 +135,6 @@ ORDER BY CustomerID;";
           ;
             return dt;
         }
-
-
         public static bool UpdateCustomer(int CustomerID, string FullName, string Phone,
              string CarPlateNumber, string CarBrand, string CarModel, string CarColor)
         {
@@ -182,8 +174,6 @@ ORDER BY CustomerID;";
             return RowAffected > 0;
 
         }
-
-
         public static int AddNewCustomer( string FullName, string Phone,
              string CarPlateNumber, string CarBrand, string CarModel, string CarColor)
         {
@@ -213,7 +203,6 @@ ORDER BY CustomerID;";
             catch (Exception ex) { }
             return CustomerID;
         }
-
         public static bool DeleteCustomer(int ID)
         {
             int RowAffected = 0;
@@ -240,7 +229,5 @@ ORDER BY CustomerID;";
             return RowAffected > 0;
 
         }
-
-
     }
 }

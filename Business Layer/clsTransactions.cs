@@ -16,7 +16,7 @@ namespace Business_Layer
 
 
         //default values:
-        clsTransactions()
+       public clsTransactions()
         {
             Mode = enMode.AddNew;
             this.TransactionsID = 0;
@@ -28,8 +28,8 @@ namespace Business_Layer
             this.TransactionsDate = DateTime.Now;
         }
 
-        clsTransactions(int TransactionID , int CustomerID,
-            int EmployeeID,int ServiceID,DateTime TransactionsDate,decimal AmountPaid
+        public clsTransactions(int TransactionID , int CustomerID,int EmployeeID,
+                      int ServiceID,DateTime TransactionsDate,decimal AmountPaid
             , string PaymentMethod)
         {
             this.TransactionsID = TransactionID;
@@ -49,17 +49,13 @@ namespace Business_Layer
         public  int TransactionsID {  get; set; }
         public clsCustomer CustomerInfo;
         public int CustomerID { get; set; }
-
         public clsEmployee EmployeeInfo;
         public int EmployeeID { get; set; }
-
         public clsService ServiceInfo;
         public int ServiceID { get; set; }
-
         public DateTime TransactionsDate { get; set; }
         public decimal AmountPaid { get; set; }
         public string PaymentMethod { get; set; }
-
 
         public static DataTable GetAllTransactions()
         {
@@ -73,17 +69,13 @@ namespace Business_Layer
             return clsTransactionsData.GetTotalRevenue();
         }
 
-
-        public static  bool AddTransaction(int CustomerID, int EmployeeID,
-            int ServiceID, DateTime TransactinsDate, Decimal AmountPaid, string PaymentMethod)
+        public   bool _AddTransaction()
         {
 
-            return clsTransactionsData.AddPayment(CustomerID, EmployeeID, ServiceID,
-                 TransactinsDate, AmountPaid, PaymentMethod) != 0;
-            //this.ID = clsTransactionsData.AddPayment(CustomerID, EmployeeID, ServiceID,
-            //    TransactinsDate, AmountPaid, PaymentMethod);
-
-            //return this.ID != 0;
+            this.TransactionsID = clsTransactionsData.AddPayment(this.CustomerID,this.ServiceID,this.EmployeeID,
+                this.TransactionsDate,this.AmountPaid,this.PaymentMethod) ;
+           
+            return this.TransactionsID > 0;
         }
 
         public static int TotalTransactions()
@@ -96,6 +88,28 @@ namespace Business_Layer
             return clsTransactionsData.DeleteTransaction(TransactionID);
         }
 
+        public bool Save()
+        {
+
+            switch (Mode)
+            {
+                case enMode.AddNew:
+                    if (_AddTransaction())
+                    {
+
+                       // Mode = enMode.Update;
+                        return true;
+                    }
+                    else { return false; }
+
+                //case enMode.Update:
+
+                //    return _UpdateCustomer();
+            }
+
+
+            return false;
+        }
 
     }
 }

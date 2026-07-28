@@ -265,7 +265,6 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OldLace;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvEmployees.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -299,7 +298,7 @@
             this.dgvEmployees.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEmployees.RowHeadersVisible = false;
             this.dgvEmployees.RowTemplate.Height = 25;
-            this.dgvEmployees.Size = new System.Drawing.Size(1026, 342);
+            this.dgvEmployees.Size = new System.Drawing.Size(1010, 309);
             this.dgvEmployees.TabIndex = 73;
             this.dgvEmployees.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvEmployees.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -44,7 +44,6 @@ namespace DataAccess_Layer
             return IsFound;
         }
 
-
         public static int TotalServices()
         {
             try
@@ -66,9 +65,7 @@ namespace DataAccess_Layer
             }
 
         }
-        //
-
-
+        
         public static DataTable GetAllServices()
         {
             DataTable dt = new DataTable();

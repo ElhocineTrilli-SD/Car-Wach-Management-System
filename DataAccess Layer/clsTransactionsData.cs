@@ -33,8 +33,8 @@ namespace DataAccess_Layer
 
         }
 
-        public static int AddPayment(int CustomerID, int EmployeeID,
-            int ServiceID, DateTime TransactinsDate, Decimal AmountPaid, string PaymentMethod)
+        public static int AddPayment(int CustomerID, int ServiceID,
+            int EmployeeID , DateTime TransactinsDate, Decimal AmountPaid, string PaymentMethod)
         {                               
             int ID = 0;              
             try                          
@@ -47,7 +47,7 @@ namespace DataAccess_Layer
                  SELECT SCOPE_IDENTITY();";
 
 
-                    Query = string.Format(Query, CustomerID, EmployeeID, ServiceID,
+                    Query = string.Format(Query, CustomerID, ServiceID, EmployeeID,
                         TransactinsDate, AmountPaid, PaymentMethod);
 
                     using (SqlCommand command = new SqlCommand(Query, connstring))
@@ -60,7 +60,10 @@ namespace DataAccess_Layer
                     }
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                clsEventLog.LogException("Addpayment", ex);
+            }
             return ID;
         }
 
@@ -135,8 +138,6 @@ FROM Transactions;";
 
 
                 }
-
-
             }
             catch (Exception ex) { }
             ;

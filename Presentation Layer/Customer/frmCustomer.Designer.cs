@@ -96,7 +96,7 @@
             this.dgvCustomer.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCustomer.RowHeadersVisible = false;
             this.dgvCustomer.RowTemplate.Height = 25;
-            this.dgvCustomer.Size = new System.Drawing.Size(1026, 342);
+            this.dgvCustomer.Size = new System.Drawing.Size(1010, 309);
             this.dgvCustomer.TabIndex = 85;
             this.dgvCustomer.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvCustomer.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -301,6 +301,7 @@
             this.txtCarColor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCarColor.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCarColor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCarColor.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtCarColor.IconLeft")));
             this.txtCarColor.Location = new System.Drawing.Point(645, 120);
             this.txtCarColor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCarColor.Name = "txtCarColor";

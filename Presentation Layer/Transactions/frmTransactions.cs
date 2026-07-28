@@ -14,6 +14,9 @@ namespace Presentation_Layer.Transactions
     public partial class frmTransactions : Form
     {
         private DataTable _dtTransactions;
+
+        public clsTransactions _TransactionsInfo = new clsTransactions();
+
         public frmTransactions()
         {
             InitializeComponent();
@@ -39,15 +42,14 @@ namespace Presentation_Layer.Transactions
             cbEmployee.SelectedIndex = 0;
 
         }
-
         public void FillComboboxWithServicesNames()
         {
             DataTable dt = clsService.GetServicesNames();
-            cbService.DataSource = dt;
+           
             cbService.DisplayMember = "ServiceName";
             cbService.ValueMember = "ServiceID";
             cbService.SelectedIndex = 0;
-
+            cbService.DataSource = dt;
         }
         public void RefrechTransactionsList()
         {
@@ -57,6 +59,19 @@ namespace Presentation_Layer.Transactions
         private void frmTransactions_Load(object sender, EventArgs e)
         {
             RefrechTransactionsList();
+
+            defaultValue();
+
+        }
+
+        public void defaultValue()
+        {
+            txtAmount.Text = "";
+            cbCustomer.SelectedIndex = 0;
+            cbEmployee.SelectedIndex = 0;
+            cbService.SelectedIndex = 0;
+            txtPaymentMethod.Text = "";
+            TDate.Value = DateTime.Now;
         }
 
         private void cbService_SelectedIndexChanged(object sender, EventArgs e)
@@ -69,14 +84,53 @@ namespace Presentation_Layer.Transactions
             txtAmount.Text = clsService.GetServicePriceByID(serviceID).ToString();
         }
 
-
         private void cbService_Click(object sender, EventArgs e)
         {
 
         }
+        private bool ValidateInputs()
+        {
+            bool IsValid = true;
 
+            errorProvider1.Clear();
+
+            if (cbCustomer.SelectedIndex == 0)
+            {
+                errorProvider1.SetError(cbCustomer, "Select a customer.");
+                IsValid = false;
+            }
+
+            if (cbEmployee.SelectedIndex == 0)
+            {
+                errorProvider1.SetError(cbEmployee, "Select an employee.");
+                IsValid = false;
+            }
+
+            if (cbService.SelectedIndex == 0)
+            {
+                errorProvider1.SetError(cbService, "Select a service.");
+                IsValid = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtAmount.Text))
+            {
+                errorProvider1.SetError(txtAmount, "Enter the amount.");
+                IsValid = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtPaymentMethod.Text))
+            {
+                errorProvider1.SetError(txtPaymentMethod, "Enter the payment method.");
+                IsValid = false;
+            }
+
+            return IsValid;
+        }
         private void guna2Button3_Click(object sender, EventArgs e)
         {
+            if (!ValidateInputs())
+                return;
+
             DialogResult result = MessageBox.Show(
                             "Are you sure you want to Add this Billing?",
                             "Confirm payment",
@@ -86,16 +140,16 @@ namespace Presentation_Layer.Transactions
 
             if (result == DialogResult.Yes)
             {
-                int CustomerID = Convert.ToInt32(cbCustomer.SelectedValue);
-                int EmployeeID = Convert.ToInt32(cbEmployee.SelectedValue);
-                int ServiceID = Convert.ToInt32(cbService.SelectedValue);
-                DateTime TransactinsDate = TDate.Value;
-                Decimal AmountPaid = Convert.ToDecimal(txtAmount.Text);
-                string PaymentMethod = txtPaymentMethod.Text;
+                _TransactionsInfo.CustomerID = Convert.ToInt32(cbCustomer.SelectedValue);
+                _TransactionsInfo.EmployeeID = Convert.ToInt32(cbEmployee.SelectedValue);
+                _TransactionsInfo.ServiceID = Convert.ToInt32(cbService.SelectedValue);
+                _TransactionsInfo.TransactionsDate = TDate.Value;
+                _TransactionsInfo.AmountPaid = Convert.ToDecimal(txtAmount.Text);
+                _TransactionsInfo.PaymentMethod = txtPaymentMethod.Text;
 
-                if (clsTransactions.AddTransaction(CustomerID, EmployeeID, ServiceID,
-                    TransactinsDate, AmountPaid, PaymentMethod))
+                if (_TransactionsInfo.Save())
                 {
+                  
                     MessageBox.Show("The new payment has been added successfully.", "Success",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
@@ -147,5 +201,12 @@ namespace Presentation_Layer.Transactions
 
             }
         }
+
+        private void txtPaymentMethod_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

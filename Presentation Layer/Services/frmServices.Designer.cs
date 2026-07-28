@@ -170,7 +170,6 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OldLace;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvServices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvServices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Bold);
@@ -204,7 +203,7 @@
             this.dgvServices.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvServices.RowHeadersVisible = false;
             this.dgvServices.RowTemplate.Height = 25;
-            this.dgvServices.Size = new System.Drawing.Size(997, 320);
+            this.dgvServices.Size = new System.Drawing.Size(1010, 309);
             this.dgvServices.TabIndex = 90;
             this.dgvServices.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvServices.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
