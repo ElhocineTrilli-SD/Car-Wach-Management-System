@@ -17,5 +17,12 @@ namespace Business_Layer
             return clsDashboardData.GetMostRequestedServices();
         }
 
+        public static DataTable GetWeeklyRevenue()
+        {
+            //call DataAccess;
+
+            return clsDashboardData.GetWeeklyRevenue();
+        }
+
     }
 }

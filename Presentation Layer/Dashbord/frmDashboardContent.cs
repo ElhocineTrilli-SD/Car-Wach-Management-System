@@ -1,4 +1,5 @@
 ﻿using Business_Layer;
+using Guna.Charts.WinForms;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -19,11 +20,13 @@ namespace Presentation_Layer.Dashbord
         List<Label> lblOrders = new List<Label>();
         List<Label> lblServices = new List<Label>();
         List<Guna2ProgressBar> PrograssBars = new List<Guna2ProgressBar>();
-
+        public DataTable Chart;
         public frmDashboardContent()
         {
             InitializeComponent();
             GetTotals();
+            MostRequeredSrvices = clsDashboard.GetMostRequestedServices();
+            Chart = clsDashboard.GetWeeklyRevenue();
             lblOrders = new List<Label>()   {
         lblOrders01,
         lblOredrs02,
@@ -38,14 +41,12 @@ namespace Presentation_Layer.Dashbord
             PrograssBars = new List<Guna2ProgressBar>() {
                 pb01,pb02,pb03,pb04
             };
-
             UpdateMostRequeredSrvices();
+            PopulateGunaChartFromDataTable(Chart);
         }
-
-       
-    public void UpdateMostRequeredSrvices()
+        public void UpdateMostRequeredSrvices()
         {
-            MostRequeredSrvices = clsDashboard.GetMostRequeredOrders();
+           
 
             for(int i = 0; i < MostRequeredSrvices.Rows.Count; i++)
             {
@@ -68,8 +69,6 @@ namespace Presentation_Layer.Dashbord
 
 
         }
-           
-
         public void GetTotals()
         {
             
@@ -82,12 +81,36 @@ namespace Presentation_Layer.Dashbord
             decimal Revenue = clsTransactions.TotalRevenue();
            TotalRevenue.Text = Revenue.ToString();
         }
-
         private void frmDashboardContent_Load(object sender, EventArgs e)
         {
 
         }
+       
+        private void PopulateGunaChartFromDataTable(DataTable dt)
+        {
+            gunaChart1.Datasets.Clear();
 
+            GunaBarDataset dataset = new GunaBarDataset
+            {
+                Label = "Daily Revenue"
+            };
+            dataset.FillColors.Add(Color.FromArgb(30, 144, 255));
+         
+            foreach (DataRow row in dt.Rows)
+            {
+                string dayName = row["DayName"].ToString();
+                double totalRevenue = Convert.ToDouble(row["TotalRevenue"]);
+                string shortDayName = dayName.Length >= 3 ? dayName.Substring(0, 3) : dayName;
 
+                
+
+                // إدخال اليوم والقيمة
+                dataset.DataPoints.Add(shortDayName, totalRevenue);
+            }
+            
+            dataset.CornerRadius = 8;
+            gunaChart1.Datasets.Add(dataset);
+            gunaChart1.Update();
+        }
     }
 }
