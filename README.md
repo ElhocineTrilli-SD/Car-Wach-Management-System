@@ -89,9 +89,9 @@ This project helped me practice:
 
 **Elhocine Trilli**
 
-GitHub: https://github.com/YourUsername
+GitHub: https://github.com/ElhocineTrilli-SD
 
-LinkedIn: https://linkedin.com/in/YourProfile
+LinkedIn: https://www.linkedin.com/in/elhocine-trilli/
 
 ---
 
