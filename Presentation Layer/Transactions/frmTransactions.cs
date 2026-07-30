@@ -1,4 +1,5 @@
 ﻿using Business_Layer;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,13 +17,13 @@ namespace Presentation_Layer.Transactions
         private DataTable _dtTransactions;
 
         public clsTransactions _TransactionsInfo = new clsTransactions();
-
         public frmTransactions()
         {
             InitializeComponent();
             FillComboboxWithCustomersNames();
             FillComboboxWithEmployeesNames();
             FillComboboxWithServicesNames();
+            
         }
         public void FillComboboxWithCustomersNames()
         {
@@ -63,17 +64,15 @@ namespace Presentation_Layer.Transactions
             defaultValue();
 
         }
-
         public void defaultValue()
         {
             txtAmount.Text = "";
             cbCustomer.SelectedIndex = 0;
             cbEmployee.SelectedIndex = 0;
             cbService.SelectedIndex = 0;
-            txtPaymentMethod.Text = "";
+            cbPaymentMethod.SelectedIndex = 0;
             TDate.Value = DateTime.Now;
         }
-
         private void cbService_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbService.SelectedValue == null ||
@@ -82,8 +81,8 @@ namespace Presentation_Layer.Transactions
             int serviceID = Convert.ToInt32(cbService.SelectedValue);
 
             txtAmount.Text = clsService.GetServicePriceByID(serviceID).ToString();
+            txtAmount.Enabled = false;
         }
-
         private void cbService_Click(object sender, EventArgs e)
         {
 
@@ -118,12 +117,13 @@ namespace Presentation_Layer.Transactions
                 IsValid = false;
             }
 
-            if (string.IsNullOrWhiteSpace(txtPaymentMethod.Text))
+            if (cbPaymentMethod.SelectedIndex == 0)
             {
-                errorProvider1.SetError(txtPaymentMethod, "Enter the payment method.");
+                errorProvider1.SetError(cbService, "Select payment method.");
                 IsValid = false;
             }
 
+          
             return IsValid;
         }
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -145,7 +145,7 @@ namespace Presentation_Layer.Transactions
                 _TransactionsInfo.ServiceID = Convert.ToInt32(cbService.SelectedValue);
                 _TransactionsInfo.TransactionsDate = TDate.Value;
                 _TransactionsInfo.AmountPaid = Convert.ToDecimal(txtAmount.Text);
-                _TransactionsInfo.PaymentMethod = txtPaymentMethod.Text;
+                _TransactionsInfo.PaymentMethod = cbPaymentMethod.Text;
 
                 if (_TransactionsInfo.Save())
                 {
@@ -164,7 +164,6 @@ namespace Presentation_Layer.Transactions
 
             }
         }
-
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int ID = (int)dgvTransactions.CurrentRow.Cells[0].Value;
@@ -201,12 +200,27 @@ namespace Presentation_Layer.Transactions
 
             }
         }
-
         private void txtPaymentMethod_TextChanged(object sender, EventArgs e)
         {
+          
+        }
+        private void guna2ContextMenuStrip2_Click(object sender, EventArgs e)
+        {
+      
 
         }
 
-       
+        private void txtAmount_Validating(object sender, CancelEventArgs e)
+        {
+            
+        }
+
+        private void z(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

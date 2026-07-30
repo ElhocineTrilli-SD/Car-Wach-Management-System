@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTransactions));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label2 = new System.Windows.Forms.Label();
@@ -49,12 +49,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbService = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtAmount = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtPaymentMethod = new Guna.UI2.WinForms.Guna2TextBox();
             this.TDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.guna2ContextMenuStrip2 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.cashToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.applePayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bankTransferToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbPaymentMethod = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             this.guna2ContextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.guna2ContextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -92,44 +98,44 @@
             this.dgvTransactions.AllowUserToDeleteRows = false;
             this.dgvTransactions.AllowUserToResizeColumns = false;
             this.dgvTransactions.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.OldLace;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.OldLace;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTransactions.ColumnHeadersHeight = 29;
             this.dgvTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvTransactions.ContextMenuStrip = this.guna2ContextMenuStrip1;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.OldLace;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTransactions.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.OldLace;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTransactions.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTransactions.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvTransactions.Location = new System.Drawing.Point(12, 248);
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.ReadOnly = true;
             this.dgvTransactions.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTransactions.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTransactions.RowHeadersVisible = false;
             this.dgvTransactions.RowTemplate.Height = 28;
             this.dgvTransactions.Size = new System.Drawing.Size(1010, 309);
@@ -228,7 +234,6 @@
             this.cbCustomer.Size = new System.Drawing.Size(186, 36);
             this.cbCustomer.StartIndex = 0;
             this.cbCustomer.TabIndex = 95;
-//            this.cbCustomer.Validating += new System.ComponentModel.CancelEventHandler(this.z);
             // 
             // label1
             // 
@@ -331,28 +336,8 @@
             this.txtAmount.SelectedText = "";
             this.txtAmount.Size = new System.Drawing.Size(239, 36);
             this.txtAmount.TabIndex = 101;
-            // 
-            // txtPaymentMethod
-            // 
-            this.txtPaymentMethod.BorderRadius = 10;
-            this.txtPaymentMethod.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPaymentMethod.DefaultText = "";
-            this.txtPaymentMethod.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPaymentMethod.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPaymentMethod.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPaymentMethod.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPaymentMethod.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPaymentMethod.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaymentMethod.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPaymentMethod.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtPaymentMethod.IconLeft")));
-            this.txtPaymentMethod.Location = new System.Drawing.Point(464, 68);
-            this.txtPaymentMethod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPaymentMethod.Name = "txtPaymentMethod";
-            this.txtPaymentMethod.PlaceholderText = "Payment method";
-            this.txtPaymentMethod.SelectedText = "";
-            this.txtPaymentMethod.Size = new System.Drawing.Size(239, 36);
-            this.txtPaymentMethod.TabIndex = 102;
-            this.txtPaymentMethod.TextChanged += new System.EventHandler(this.txtPaymentMethod_TextChanged);
+            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.z);
+            this.txtAmount.Validating += new System.ComponentModel.CancelEventHandler(this.txtAmount_Validating);
             // 
             // TDate
             // 
@@ -363,23 +348,92 @@
             this.TDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.TDate.Location = new System.Drawing.Point(464, 123);
             this.TDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.TDate.MinDate = new System.DateTime(2026, 7, 28, 0, 0, 0, 0);
+            this.TDate.MinDate = new System.DateTime(2026, 1, 1, 0, 0, 0, 0);
             this.TDate.Name = "TDate";
             this.TDate.Size = new System.Drawing.Size(239, 36);
             this.TDate.TabIndex = 103;
-            this.TDate.Value = new System.DateTime(2026, 7, 28, 0, 0, 0, 0);
+            this.TDate.Value = new System.DateTime(2026, 7, 28, 13, 44, 0, 0);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // guna2ContextMenuStrip2
+            // 
+            this.guna2ContextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cashToolStripMenuItem,
+            this.cardToolStripMenuItem,
+            this.applePayToolStripMenuItem,
+            this.bankTransferToolStripMenuItem});
+            this.guna2ContextMenuStrip2.Name = "guna2ContextMenuStrip2";
+            this.guna2ContextMenuStrip2.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.guna2ContextMenuStrip2.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2ContextMenuStrip2.RenderStyle.ColorTable = null;
+            this.guna2ContextMenuStrip2.RenderStyle.RoundedEdges = true;
+            this.guna2ContextMenuStrip2.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.guna2ContextMenuStrip2.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.guna2ContextMenuStrip2.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.guna2ContextMenuStrip2.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.guna2ContextMenuStrip2.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.guna2ContextMenuStrip2.Size = new System.Drawing.Size(146, 92);
+            this.guna2ContextMenuStrip2.Click += new System.EventHandler(this.guna2ContextMenuStrip2_Click);
+            // 
+            // cashToolStripMenuItem
+            // 
+            this.cashToolStripMenuItem.Name = "cashToolStripMenuItem";
+            this.cashToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.cashToolStripMenuItem.Text = "Cash";
+            // 
+            // cardToolStripMenuItem
+            // 
+            this.cardToolStripMenuItem.Name = "cardToolStripMenuItem";
+            this.cardToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.cardToolStripMenuItem.Text = "Card";
+            // 
+            // applePayToolStripMenuItem
+            // 
+            this.applePayToolStripMenuItem.Name = "applePayToolStripMenuItem";
+            this.applePayToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.applePayToolStripMenuItem.Text = "Apple Pay";
+            // 
+            // bankTransferToolStripMenuItem
+            // 
+            this.bankTransferToolStripMenuItem.Name = "bankTransferToolStripMenuItem";
+            this.bankTransferToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.bankTransferToolStripMenuItem.Text = "Bank Transfer";
+            // 
+            // cbPaymentMethod
+            // 
+            this.cbPaymentMethod.BackColor = System.Drawing.Color.Transparent;
+            this.cbPaymentMethod.BorderRadius = 10;
+            this.cbPaymentMethod.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbPaymentMethod.DropDownHeight = 300;
+            this.cbPaymentMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPaymentMethod.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbPaymentMethod.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbPaymentMethod.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPaymentMethod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbPaymentMethod.IntegralHeight = false;
+            this.cbPaymentMethod.ItemHeight = 30;
+            this.cbPaymentMethod.Items.AddRange(new object[] {
+            "-Select Payment Method-",
+            "Card",
+            "Cash",
+            "Apple Pay",
+            "Bank Transfer"});
+            this.cbPaymentMethod.Location = new System.Drawing.Point(464, 68);
+            this.cbPaymentMethod.Name = "cbPaymentMethod";
+            this.cbPaymentMethod.Size = new System.Drawing.Size(239, 36);
+            this.cbPaymentMethod.StartIndex = 0;
+            this.cbPaymentMethod.TabIndex = 105;
             // 
             // frmTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 569);
+            this.Controls.Add(this.cbPaymentMethod);
             this.Controls.Add(this.TDate);
-            this.Controls.Add(this.txtPaymentMethod);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbService);
@@ -399,6 +453,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
             this.guna2ContextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.guna2ContextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,10 +474,15 @@
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2ComboBox cbService;
         private Guna.UI2.WinForms.Guna2DateTimePicker TDate;
-        private Guna.UI2.WinForms.Guna2TextBox txtPaymentMethod;
         private Guna.UI2.WinForms.Guna2TextBox txtAmount;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem cashToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem applePayToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bankTransferToolStripMenuItem;
+        private Guna.UI2.WinForms.Guna2ComboBox cbPaymentMethod;
     }
 }
