@@ -58,7 +58,10 @@ ORDER BY
             {
                 using (SqlConnection connection = new SqlConnection(clsConnection.DBConnectionString))
                 {
-                    string Query = @"WITH AllDays AS(
+                    string Query = @"
+SET DATEFIRST 1;
+
+WITH AllDays AS(
     SELECT 'Monday' AS DayName, 1 AS DayNum UNION ALL
     SELECT 'Tuesday', 2 UNION ALL
     SELECT 'Wednesday', 3 UNION ALL
@@ -73,8 +76,12 @@ SELECT
 FROM AllDays d
 LEFT JOIN Transactions t
     ON d.DayName = DATENAME(WEEKDAY, t.TransactionDate)
+AND T.TransactionDate >= DATEADD(DAY, 1 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))
+AND T.TransactionDate < DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))
 GROUP BY
-    d.DayName,
+    d.DayNum,
+    d.DayName
+ORDER BY
     d.DayNum;";
 
                     connection.Open();
