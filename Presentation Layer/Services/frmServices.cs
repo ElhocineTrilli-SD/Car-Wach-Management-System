@@ -146,5 +146,14 @@ namespace Presentation_Layer.Services
               
             }
         }
+
+        private void txtSPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // JustNumbers
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

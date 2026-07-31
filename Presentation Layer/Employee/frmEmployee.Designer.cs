@@ -111,6 +111,7 @@
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(239, 39);
             this.txtPhone.TabIndex = 63;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // txtRole
             // 
@@ -168,7 +169,7 @@
             this.dtpHireDate.Name = "dtpHireDate";
             this.dtpHireDate.Size = new System.Drawing.Size(239, 39);
             this.dtpHireDate.TabIndex = 68;
-            this.dtpHireDate.Value = new System.DateTime(2026, 7, 10, 17, 35, 11, 21);
+            this.dtpHireDate.Value = new System.DateTime(2026, 7, 28, 0, 0, 0, 0);
             // 
             // guna2Elipse2
             // 

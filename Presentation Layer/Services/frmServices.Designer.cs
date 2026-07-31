@@ -76,6 +76,7 @@
             this.txtSPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSPrice.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSPrice.IconLeft")));
             this.txtSPrice.Location = new System.Drawing.Point(510, 72);
             this.txtSPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSPrice.Name = "txtSPrice";
@@ -83,6 +84,7 @@
             this.txtSPrice.SelectedText = "";
             this.txtSPrice.Size = new System.Drawing.Size(239, 49);
             this.txtSPrice.TabIndex = 86;
+            this.txtSPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSPrice_KeyPress);
             // 
             // txtSName
             // 
